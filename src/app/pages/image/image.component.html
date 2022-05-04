@@ -1,0 +1,81 @@
+<section>
+    <br><br><br><br>
+<div class="container row">
+    <div class="col-md-12">
+        <h1>Upload Image</h1>
+    </div>
+</div>
+<div class="container row">
+    <div class="col-md-6">
+   <input type="file" (change)="onFileChanged($event)">
+     
+      
+    </div>
+    <div class="col-md-6">
+        <input type="button" (click)="onUpload()" value="upload">
+    </div>
+</div>
+<div class="container row">
+    <div class="col-md-12">
+        <div *ngIf=message>{{message}}</div>
+    </div>
+</div>
+<div class="container row">
+    <div class="col-md-6">
+        <input type="text" class="form-control" id="name" placeholder="image name" [(ngModel)]="imageName"
+            name="name" />
+    </div>
+    <div class="col-md-6">
+        <input type="button" (click)="getImage()" value="Get Image">
+    </div>
+</div>
+<div class="container row">
+    <div class="col-md-12">
+       <!-- <div *ngIf=retrievedImage>
+            <img [src]="retrievedImage">
+        </div>-->
+    </div>
+</div>
+
+<div class="col-lg-12  mt-5 "  >
+    <div class="box shadow-sm ml-3" >
+        <div class="row" style="display: flex; align-items: center; justify-content: center;" >
+        <div class="col-lg-4" style="display: flex; align-items: center; justify-content: center;" >
+            
+            <div *ngIf=!retrievedImage>
+                <img src="../../../assets/img/user3.png" width="100%" class="gha" >
+
+            </div>
+        
+          
+            
+            <div *ngIf=retrievedImage>
+                <img [src]="retrievedImage" width="100%" class="gha" >
+            </div>
+            
+        
+        </div>
+        
+        </div>
+    </div>
+        
+       
+</div>
+<form >
+<div class="form-group">
+   
+    <br>
+    <input type="file" accept="image/*" class="btn btn-dark" (change)="onSelectFile($event)">&nbsp;
+    <img src="../../../assets/img/user3.png"  width="100%" class="gha" *ngIf="!imgURL">
+    <img [src]="imgURL"  width="100%" class="gha" *ngIf="imgURL">
+    
+ 
+
+</div>
+<div>
+    <button type="submit" (click)="OnUpload()" class="btn btn-dark"><i class="fa da-database"></i>Submit</button>
+    <!--<a class="btn btn-outline-success" routerLink="/studentprofile"></a>-->
+</div>
+
+</form>
+</section>

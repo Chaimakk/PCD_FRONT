@@ -1,0 +1,85 @@
+<section class="course" style="padding-top: 80px;">
+   <div class="container" id="main-container" >
+      
+         <h1 class="text-center"><strong>My Courses</strong> </h1>
+
+         <div class="row mt-5" >
+            <div class="col-lg-4 mb-5" *ngFor="let c of courses">
+               <div  class="box shadow-sm" >
+                  <img srcset="data:image/png;base64,{{c?.picture}}"  width="100%" >
+                  <h1 class="mt-2"><strong>{{c.courseName}}</strong></h1>
+                  <h2 clas="mt-2"><strong>Description: </strong>{{c?.description}}</h2>
+                  <h2 clas="mt-2"><strong>Former's Name: </strong>{{c?.formerName}}</h2>
+                  <h3 clas="mt-2"><strong>Price: </strong>{{c?.price}} <strong>DT</strong></h3>
+                  <button type="button" (click)="onOpenModal(c,'update')" class="btn btn-info btn-sm mt-2"  data-toggle="modal" data-target="#updatecourseModal" >Update</button>
+                  <button type="button" (click)="onOpenModal(c,'delete')"  class="btn btn-danger btn-sm mt-2" data-toggle="modal" data-target="#deletecourseModal" >Delete</button>
+               </div>
+               
+            </div>
+         </div>
+
+      <!-- Edit Modal -->
+      <div class="modal fade" id="updatecourseModal" tabindex="-1" role="dialog" aria-labelledby="updatecourseModalLabel" aria-hidden="true">
+         <div class="modal-dialog" role="document">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <h5 class="modal-title" id="updatecourseModalLabel">Edit Course {{updatecourse?.courseName}}</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                  </button>
+               </div>
+               <div class="modal-body">
+                  <form #editForm="ngForm">
+                     <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" ngModel="{{updatecourse?.formerName}}" name="formerName" class="form-control" id="formerName" aria-describedby="emailHelp" placeholder="Name">
+                     </div>
+                     <input type="hidden" ngModel="{{updatecourse?.id}}" name="id" class="form-control" id="id" placeholder="Email">
+                     <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" ngModel="{{updatecourse?.formerEmail}}" name="formerEmail" class="form-control" id="formerEmail" placeholder="Email">
+                     </div>
+                     <div class="form-group">
+                        <label for="phone">Course's Name</label>
+                        <input type="text" ngModel="{{updatecourse?.courseName}}" name="courseName" class="form-control" id="courseName" placeholder="Course's Name">
+                     </div>
+                     <div class="form-group">
+                        <label for="phone">Price</label>
+                        <input type="number" ngModel="{{updatecourse?.price}}" name="price" class="form-control" id="price" name="price" placeholder="Price">
+                     </div>
+                     <div class="form-group">
+                        <label for="phone">Picture</label>
+                        <input type="file" ngModel="{{updatecourse?.picture}}" name="file" class="form-control" id="imageUrl" placeholder="Image URL">
+                     </div>
+                     <div class="modal-footer">
+                        <button type="button" id="" data-dismiss="modal" class="btn btn-secondary">Close</button>
+                        <button (click)="onUpdateCourse(editForm.value)" data-dismiss="modal" class="btn btn-primary" >Save changes</button>
+                     </div>
+                  </form>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <!-- Delete Modal -->
+      <div class="modal fade" id="deletecourseModal" tabindex="-1" role="dialog" aria-labelledby="deleteModelLabel" aria-hidden="true">
+         <div class="modal-dialog" role="document">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <h5 class="modal-title" id="deleteModelLabel">Delete Courses</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                  </button>
+               </div>
+               <div class="modal-body">
+                  <p>Are you sure you want to delete employee {{deletecourses?.courseName}}?</p>
+                  <div class="modal-footer">
+                     <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                     <button (click)="onDeleteCourse(deletecourses.id)" class="btn btn-danger" data-dismiss="modal">Yes</button>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>

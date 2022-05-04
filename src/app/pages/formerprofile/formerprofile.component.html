@@ -1,0 +1,130 @@
+
+
+
+
+<section class="course" style="padding-top: 60px;">
+    
+    <div class=" row">
+        <div class="row mt-5 col-lg-4 " style="background-color: aliceblue;   " >
+            
+            <div class="col-lg-12  mt-5 "  >
+                <div class="box shadow-sm ml-3" >
+                    <div class="row" style="display: flex; align-items: center; justify-content: center;" >
+                    <div class="col-lg-4" style="display: flex; align-items: center; justify-content: center;" >
+                        
+                    
+                        <img src="../../../assets/img/user3.png" width="100%" class="gha" >
+                        
+                        
+                    
+                    </div>
+                    
+                    <div class="col-lg-12" style="padding-left: 2cm;">
+                       
+                    
+                    <br>
+                    
+                    
+                    
+                     </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12 mt-2 mb-2 mr-1">
+                            <label >First Name </label>
+                            <input name="studentFirstName"   type="text" class="form-control"  >
+                        </div>
+                        <div class="col-lg-12 mt-2 mb-2">
+                            <label >Last Name </label>
+                            <input name="studentLastName"   type="text" class="form-control"  >
+                        </div>
+                        <div class="col-lg-12 mt-2 mb-2">
+                            <label >Email </label>
+                            <input name="studentEmail"   type="email" class="form-control"  >
+                        </div>
+                        
+                      
+                    <div class="col-lg-12 mt-2 mb-2">
+                        <label >Adress </label>
+                      <input name="studentAdress"    type="text" class="form-control"  >
+                    </div>
+                        
+                      <div class="col-lg-6 mt-2 mb-2">
+                        <label >Telephone Number </label>
+                      <input name="studentTelephoneNumber"   type="number" class="form-control"  >
+                  </div>
+                  <div class="col-lg-6 mt-2 mb-2 ">
+                        <label >Country </label>
+                      <input name="studentCountry"   type="text" class="form-control"  >
+                    </div>
+                    <div class="col-lg-6 mt-2 mb-2">
+                        <label >City </label>
+                      <input name="studentCity"   type="text" class="form-control"  >
+                    </div>
+                    <div class="col-lg-6 mt-2 mb-2">
+                        <label >Postal Code <Code></Code></label>
+                      <input name="studentPostalCode"    type="number" class="form-control"  >
+                    </div>
+                    
+                        
+                        
+                      
+                       
+                        
+              
+              
+                    </div>
+                    <div class="col-lg-12" style="display: flex; align-items: center; justify-content: center;">
+                   
+                        <button class="btn btn-dark btn-sm mt-2" routerLink="updateformerprofile" >Modify information <i class="bi bi-pencil"></i> </button>
+                    </div>                
+                    </div>
+    
+            </div>
+            <div class="col-lg-12  " >
+                <div class="box shadow-sm ml-3" style="background-image: url(../../../assets/img/centerr2.jpg);">
+                    <div class="row mt-4">
+                    <div class="col-lg-12">
+                    <p class="mt-4 text-center" style="font-weight: bold;">Do you want to work in a training center?</p>
+                    <br>
+                    </div>
+                    <div class="col-lg-12" style="display: flex; align-items: center; justify-content: center;">
+                    
+                    <button class="btn btn-dark btn-sm mt-2" routerLink="courses" style="display: flex; align-items: center; justify-content: center;"> find a job now <i class="bi bi-hand-index-thumb"></i></button>
+                    </div>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+        
+    
+        <div class="row mt-5 col-lg-8 " style="background-color: aliceblue; " >
+            <h4 class="text-center" style="text-decoration: underline; padding-bottom: 1cm; padding-left: 1cm; font-weight: bold; ">NOTIFICATIONS<i class="bi bi-bell"></i></h4> 
+            
+            <div class="col-lg-12 mb-5 " *ngFor="let cs of course">
+                <div class="box shadow-sm ml-3">
+                    <div class="row">
+                    <div class="col-lg-4">
+                    <img srcset="{{cs.image}}" width="100%" class="gha">
+                    </div>
+                    <div class="col-lg-8">
+                    <p class="mt-2" style="font-weight: bold;">{{cs.name}}</p>
+                    <h6 class="mt-2" >{{cs.firstname}}</h6>
+                    <p clas="mt-2" style="color: dimgrey; font-size: small;">{{cs.description}}</p>
+                
+                    <button class="btn btn-dark btn-sm mt-2" >Read message <i class="bi bi-envelope"></i> </button>
+                    </div>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+    
+    
+    </div>
+</section>
+
+
+
+
+

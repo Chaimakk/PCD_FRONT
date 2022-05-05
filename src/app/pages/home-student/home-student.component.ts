@@ -5,6 +5,7 @@ import { NgbCarousel, NgbSlideEvent, NgbSlideEventSource ,NgbCarouselConfig} fro
 import { CoursesService } from '../services/Courses/courses.service';
 import { FormerAuthService } from '../services/former/former-auth.service';
 import { FormerService } from '../services/former/former.service';
+import { StudentAuthService } from '../services/student/student-auth.service';
 declare var jQuery:any;
 declare var $:any;
 declare interface TableData {
@@ -45,7 +46,7 @@ export class HomeStudentComponent implements OnInit {
   message=0;
   addForm:any;
   file!: File;
-  constructor(config: NgbCarouselConfig,public formerAuthService:FormerAuthService,public formerService:FormerService,private fb:FormBuilder, private courseservice:CoursesService) {
+  constructor(config: NgbCarouselConfig,public studentAuthService: StudentAuthService,public formerAuthService:FormerAuthService,public formerService:FormerService,private fb:FormBuilder, private courseservice:CoursesService) {
     config.showNavigationArrows = true;
       config.showNavigationIndicators = true;
       this.foodForm=this.fb.group({

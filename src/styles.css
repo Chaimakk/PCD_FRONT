@@ -1,37 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
 @import '~bootstrap/dist/css/bootstrap.css';
-/*
-body
+
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+:root
 {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-}*/
-
-
-:root{
-    --background-dark: #2d3548;
-    --text-light: rgba(255,255,255,0.6);
-    --text-lighter: rgba(255,255,255,0.9);
-    --spacing-s: 8px;
-    --spacing-m: 16px;
-    --spacing-l: 24px;
-    --spacing-xl: 32px;
-    --spacing-xxl: 64px;
-    --width-container: 1200px;
-  }
-  
-  *{
-    border: 0;
+    --primary-color:#261d51;
+    --secondary-color:#162328;
+}
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
-  
-body
-{
-    height: 100vh;
-    font-family: Arial, Helvetica, sans-serif;
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
+position:relative; height: fit-content;
+ }

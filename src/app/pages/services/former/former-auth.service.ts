@@ -11,6 +11,17 @@ export class FormerAuthService {
   constructor(private router:Router) { }
 public loggedUser!:string;
 public loggedEmail!:string;
+public loggedFullName!:string;
+
+public loggedAddress!:string;
+public loggedPostalCode!:number;
+public loggedCity!:string;
+public loggedLevel!:string;
+public loggedDomain!:string;
+public loggedExperience!:string;
+public loggedDescription!:string;
+
+
 
   //public isloggedInF: Boolean = false;
   public isloggedIn: Boolean = false;
@@ -46,6 +57,15 @@ public loggedEmail!:string;
    // this.isloggedInF = true;
    this.isloggedIn = true;
     this.roles = former.roles;
+  this.loggedFullName=former.userFullName;
+    this.loggedAddress=former.userAddress;
+    this.loggedPostalCode=former.userPostalCode;
+    this.loggedCity=former.userCity;
+    this.loggedDomain=former.userDomain;
+    this.loggedLevel=former.userLevel;
+    this.loggedExperience=former.userExperience;
+    this.loggedDescription=former.userDescription;
+  
 
     localStorage.setItem('loggedUser',this.loggedUser);
     localStorage.setItem('loggedEmail',this.loggedEmail);

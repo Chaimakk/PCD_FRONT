@@ -3,74 +3,76 @@
         <div class="row mr-2" >
             <div class="col-md-8 mt-2 ml-5" >
                 <div class="card  mr-4" style="border-radius: 20px; ">
-                    <div class="header" style="background-color: lightblue; border-top-left-radius: 20px; border-top-right-radius: 20px;">
+                    <div class="header" style="background-color: #f6f6f6; border-top-left-radius: 20px; border-top-right-radius: 20px;">
                         <h4 class="title text-center">Edit Profile</h4>
                     </div>
                     <div class="content">
                         <form>
                             <div class="row">
                                 
-                                <div class="col-md-3">
-                                    <div class="form-group">
+                                <div class="col-md-6"  >
+                                    <div class="form-group" style="padding-right: 10px; padding-left: 20px; padding-top: 20px;">
                                         <label>Username</label>
-                                        <input type="text" class="form-control" placeholder="Username" value="mehdi23">
+                                        <input type="text" class="form-control" placeholder="Username" value="{{serviceAuthStudent?.loggedUser}}">
                                     </div>
                                 </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Email address</label>
-                                        <input type="email" class="form-control" placeholder="Email">
+                                <div class="col-md-6" >
+                                    <div class="form-group" style="padding-right: 10px; padding-left: 10px; padding-top: 20px;">
+                                        <label>Full Name</label>
+                                        <input type="text" class="form-control" placeholder="Company" value="{{serviceAuthStudent?.loggedFullName}}">
                                     </div>
                                 </div>
+                               
+                                
                             </div>
 
                             <div class="row">
-                                <div class="col-md-6">
+                                
+                                <div class="col-md-12" style="padding-right: 20px; padding-left: 20px; padding-top: 20px;">
                                     <div class="form-group">
-                                        <label>First Name</label>
-                                        <input type="text" class="form-control" placeholder="Company" value="Mehdi">
+                                        <label for="exampleInputEmail1">Email address</label>
+                                        <input type="email" class="form-control" placeholder="Email" value="{{serviceAuthStudent?.loggedEmail}}">
                                     </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Last Name</label>
-                                        <input type="text" class="form-control" placeholder="Last Name" value="njema">
-                                    </div>
-                                </div>
+
+
+
+
                             </div>
 
                             <div class="row">
                                 <div class="col-md-12">
-                                    <div class="form-group">
+                                    <div class="form-group" style="padding-right: 20px; padding-left: 20px; padding-top: 20px;">
                                         <label>Address</label>
-                                        <input type="text" class="form-control" placeholder="Home Address" value="manouba, technopole">
+                                        <input type="text" class="form-control" placeholder="Home Address" value="{{serviceAuthStudent?.loggedAddress}}" >
                                     </div>
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="col-md-4">
-                                    <div class="form-group">
+                                    <div class="form-group" style="padding-right: 10px; padding-left: 20px; padding-top: 20px;">
                                         <label>City</label>
-                                        <input type="text" class="form-control" placeholder="City" value="Manouba">
+                                        <input type="text" class="form-control" placeholder="City"value="{{serviceAuthStudent?.loggedCity}}">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
-                                    <div class="form-group">
+                                    <div class="form-group" style="padding-right: 10px; padding-left: 10px; padding-top: 20px;">
                                         <label>Country</label>
                                         <input type="text" class="form-control" placeholder="Country" value="Tunisia">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
-                                    <div class="form-group">
+                                    <div class="form-group" style="padding-right: 20px; padding-left: 10px;padding-top: 20px;">
                                         <label>Postal Code</label>
-                                        <input type="number" class="form-control" placeholder="ZIP Code">
+                                        <input type="number" class="form-control" placeholder="ZIP Code" value="{{serviceAuthStudent?.loggedPostalCode}}" >
                                     </div>
                                 </div>
                             </div>
 
                             <div style="display: flex; align-items: center; justify-content: center;">
-                            <button type="submit" class="btn btn-info btn-fill pull-right " style=" color:#fff; font-weight: bold; padding: 10px; margin-top: 20px; margin-bottom: 20px;" >Update Profile</button>
+                            <button  mat-raised-button style=" color:#261d51;font-weight: bold 
+                            ;background-color: darkgray ; padding: 10px; margin-top: 20px; margin-bottom: 20px; border-radius: 20px;" >Update Profile</button>
                         </div>
                             <div class="clearfix"></div>
                         </form>
@@ -112,7 +114,7 @@
             </div>
         
         -->
-        <div class="col-md-3 mt-2 " style="background-color: lightblue; border-radius: 20px;" >
+        <div class="col-md-3 mt-2 " style="background-color: #f6f6f6; border-radius: 20px;" >
             <div class="box shadow-sm "  style="background-image:url(https://ununsplash.imgix.net/photo-1431578500526-4d9613015464?fit=crop&fm=jpg&h=300&q=75&w=400) ; border-bottom-left-radius: 0; border-bottom-right-radius: 0;">
                 <div class="row">
                 <div class="col-lg-12" style="display: flex; align-items: center; justify-content: center; "  >
@@ -136,10 +138,10 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="form-group">
-                        <h4 class="title text-center" style="font-weight: bold; color: #261d51 ;">Mehdi njema</h4>
-                        <h6 class="text-center" style="font-weight: bold; color: #261d51 ;" >username </h6>
+                        <h2 class="title text-center" style="font-weight: bold; color: #261d51 ;">{{serviceAuthStudent?.loggedFullName}}</h2>
+                        <h3 class="text-center" style="font-weight: bold; color: #261d51 ;" >{{serviceAuthStudent?.loggedUser}}</h3>
                        
-                        <p class="text-center" style="color: lightslategray;">Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo.</p>
+                        <h4 class="text-center" style="color: lightslategray;">Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo.</h4>
                    <br>
                    <br>
                    
@@ -147,10 +149,10 @@
                         <hr>
                         
                         <div class="col-lg-12 mt-3 mb-3 " style=" display: flex; align-items: center; justify-content: center;">
-                            <a href="#" target="_blank" style="padding-right: 18px;"><i class="bi bi-facebook"></i></a>
-                            <a href="#" target="_blank" style="padding-right: 18px;"><i class="bi bi-whatsapp"></i></a>
-                            <a href="#" target="_blank" style="padding-right: 18px;"><i class="bi bi-instagram"></i></a>
-                            <a href="#" target="_blank" style="padding-right: 18px;"><i class="bi bi-skype"></i></a>
+                            <a href="#" target="_blank" style="padding-right: 18px; color: #261d51;"><i class="bi bi-facebook"></i></a>
+                            <a href="#" target="_blank" style="padding-right: 18px; color: #261d51;"><i class="bi bi-whatsapp"></i></a>
+                            <a href="#" target="_blank" style="padding-right: 18px;color: #261d51;"><i class="bi bi-instagram"></i></a>
+                            <a href="#" target="_blank" style="padding-right: 18px;color: #261d51;"><i class="bi bi-skype"></i></a>
                         </div>
                     </div>
                 </div>

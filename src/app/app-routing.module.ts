@@ -1,3 +1,4 @@
+
 import { MusicComponent } from './pages/category/music/music.component';
 import { MessagesComponent } from './pages/messages/messages.component';
 import { AdminComponent } from './pages/admin/admin.component';
@@ -5,6 +6,7 @@ import { AdminComponent } from './pages/admin/admin.component';
 import { ForbiddenComponent } from './pages/forbidden/forbidden.component';
 import { StudenthomeComponent } from './pages/studenthome/studenthome.component';
 import { LoginstudentComponent } from './pages/loginstudent/loginstudent.component';
+
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AllcenterComponent } from './pages/allcenter/allcenter.component';
@@ -22,7 +24,7 @@ import { ThirdofComponent } from './pages/thirdof/thirdof.component';
 import { AuthGuard } from './pages/_auth/auth.guard';
 import { UserComponent } from './pages/user/user.component';
 import { HomeFormerComponent } from './pages/home-former/home-former.component';
-import { HomeStudentComponent } from './pages/home-student/home-student.component';
+
 import { StudentprofileComponent } from './pages/studentprofile/studentprofile.component';
 import { BillingComponent } from './pages/billing/billing.component';
 import { UpdateprofileComponent } from './pages/updateprofile/updateprofile.component';
@@ -47,6 +49,7 @@ import { DanceComponent } from './pages/category/dance/dance.component';
 import { LanguageComponent } from './pages/category/language/language.component';
 import { PhysiquesComponent } from './pages/category/physiques/physiques.component';
 import { SportsComponent } from './pages/category/sports/sports.component';
+import { HomeStudentComponent } from './pages/home-student/home-student.component';
 
 
 const routes: Routes = [{path:"",component:HomeComponent   },
@@ -69,7 +72,6 @@ const routes: Routes = [{path:"",component:HomeComponent   },
 {path:"loginstudent", component:StudenthomeComponent},
 { path: 'admin', component: AdminComponent, canActivate:[AuthGuard], data:{roles:['Admin']} },
 { path: 'user', component: UserComponent ,  canActivate:[AuthGuard], data:{roles:['Student']} },
-{ path: 'home-student', component: HomeStudentComponent ,  canActivate:[AuthGuard], data:{roles:['Student']} },
 { path: 'studentprofile', component: StudentprofileComponent,  canActivate:[AuthGuard], data:{roles:['Student']} },
 { path: 'billing', component: BillingComponent,  canActivate:[AuthGuard], data:{roles:['Student']} },
 { path: 'messages', component: MessagesComponent,  canActivate:[AuthGuard], data:{roles:['Student']} },
@@ -78,6 +80,7 @@ const routes: Routes = [{path:"",component:HomeComponent   },
 {path:"studentprofile/updateprofile",component:UpdateprofileComponent,  canActivate:[AuthGuard], data:{roles:['Student']} },
 
 { path: 'home-center', component: HomeCenterComponent ,  canActivate:[AuthGuard], data:{roles:['Center']} },
+{ path: 'home-student', component: HomeStudentComponent ,  canActivate:[AuthGuard], data:{roles:['Student']} },
 
 {path: "forbidden", component: ForbiddenComponent},
 {path: "login", component: LoginComponent},

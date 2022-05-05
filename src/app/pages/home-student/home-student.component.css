@@ -1,3 +1,51 @@
+:root {
+  --background: #f0f2f5;
+  --white1: #ffffff;
+  --white2: #dde2e7;
+  --white3: #4e4f5080;
+  --white4: #ceced6;
+  --dark1: #606264;
+  --dark2: #0f0d0d;
+  --blue1:#261d51 ;
+  --scrollBar: #656768;
+}
+
+
+
+
+
+
+
+
+
+.sideBar::-webkit-scrollbar {
+  width: 10px;
+}
+
+.sideBar::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+.sideBar::-webkit-scrollbar-track:hover {
+  background: var(--white1);
+}
+
+.sideBar:hover::-webkit-scrollbar-thumb {
+  background: var(--scrollBar);
+  border-radius: 5px;
+}
+
+.sideBar:hover {
+  scrollbar-color: var(--white1) var(--background);
+}
+
+.left {
+  padding-top: 70px;
+}
+
+.left:hover .mainTitle a {
+  visibility: visible;
+}
 
 
 .globalProfile {
@@ -766,12 +814,7 @@ img{
   
 }
 
-
-
-
-
-
-
+/*
 .hero-section{
   align-items: flex-start;
   
@@ -867,3 +910,4 @@ img{
 .example-chip .cdk-drop-list-dragging {
   transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
 }
+*/

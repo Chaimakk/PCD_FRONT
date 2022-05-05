@@ -1,16 +1,23 @@
 import { StudentService } from './pages/services/student/student.service';
 
-
-  import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import{MatListModule} from '@angular/material/list'
+import{MatDividerModule} from '@angular/material/divider'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {ClipboardModule} from '@angular/cdk/clipboard';
 
 import { NgbModule  } from '@ng-bootstrap/ng-bootstrap';
+import {MatButtonModule} from '@angular/material/button';
+import {MatTooltipModule} from'@angular/material/tooltip'
 
-import { Placement as PopperPlacement, Options } from '@popperjs/core';
+import {MatBadgeModule} from '@angular/material/badge';
+import {MatCardModule} from '@angular/material/card';
 
+import{MatIconModule} from '@angular/material/icon';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ContactComponent } from './pages/contact/contact.component';
@@ -20,10 +27,9 @@ import { RegisterComponent } from './pages/register/register.component';
 import { HeaderComponent } from './sharepages/header/header.component';
 import { FooterComponent } from './sharepages/footer/footer.component';
 import { HomeComponent } from './pages/home/home.component';
-import { MatSliderModule } from '@angular/material/slider';
-import { MatSidenavModule } from '@angular/material/sidenav';
+
 import{MatChipsModule}from'@angular/material/chips'
-import { from } from 'rxjs';
+
 import { CoursesComponent } from './pages/courses/courses.component';
 import { ThirdofComponent } from './pages/thirdof/thirdof.component';
 import { RegistercenterComponent } from './pages/registercenter/registercenter.component';
@@ -41,7 +47,7 @@ import { UserComponent } from './pages/user/user.component';
 import { AuthInterceptor } from './pages/_auth/auth.interceptor';
 import { AuthGuard } from './pages/_auth/auth.guard';
 import { HomeFormerComponent } from './pages/home-former/home-former.component';
-import { HomeStudentComponent } from './pages/home-student/home-student.component';
+
 import { StudentprofileComponent } from './pages/studentprofile/studentprofile.component';
 import { BillingComponent } from './pages/billing/billing.component';
 import{MessagesComponent}  from './pages/messages/messages.component';
@@ -76,6 +82,8 @@ import { DanceComponent } from './pages/category/dance/dance.component';
 import { MusicComponent } from './pages/category/music/music.component';
 import { SportsComponent } from './pages/category/sports/sports.component';
 import { ChemistryComponent } from './pages/category/chemistry/chemistry.component';
+import { HomeStudentComponent } from './pages/home-student/home-student.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -101,7 +109,7 @@ import { ChemistryComponent } from './pages/category/chemistry/chemistry.compone
     AdminComponent,
     UserComponent,
     HomeFormerComponent,
-    HomeStudentComponent,
+
     StudentprofileComponent,
     BillingComponent,
     MessagesComponent,
@@ -129,9 +137,8 @@ import { ChemistryComponent } from './pages/category/chemistry/chemistry.compone
          DanceComponent,
          MusicComponent,
          SportsComponent,
-         ChemistryComponent
-    
-
+         ChemistryComponent,
+    HomeStudentComponent,
   ],
   imports: [
     BrowserModule,
@@ -148,6 +155,15 @@ import { ChemistryComponent } from './pages/category/chemistry/chemistry.compone
     ReactiveFormsModule,
     FontAwesomeModule,
     MatChipsModule,
+    MatIconModule,
+    MatButtonModule,
+    MatTooltipModule,
+    MatBadgeModule,
+    MatCardModule,
+    ClipboardModule,
+    MatSidenavModule,
+    MatListModule,
+    MatDividerModule
 
 
 

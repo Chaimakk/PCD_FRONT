@@ -16,8 +16,9 @@ export class AppComponent implements OnInit {
 
   ngOnInit () {
     let isloggedin: string;
-    let loggedStudent:string;
+  
     let loggedUser:string;
+ 
 
     /*let isloggedinF: string;
     let loggedFormer:string;*/
@@ -29,13 +30,13 @@ export class AppComponent implements OnInit {
     loggedUser=localStorage.getItem('loggedUser')!;
     /*isloggedinF = localStorage.getItem('isloggedinF')!;
     loggedFormer = localStorage.getItem('loggedFormer')!;*/
+
  
 
     if (isloggedin!="true" || !loggedUser)
     this.router.navigate(['/home']);
     else
     this.studentservice.setLoggedUserFromLocalStorage(loggedUser);
- 
     this.formerAuthService.setLoggedUserFromLocalStorageF(loggedUser);
     this.centerAuthService.setLoggedUserFromLocalStorageC(loggedUser);
     this.adminAuthService.setLoggedUserFromLocalStorageA(loggedUser);

@@ -1,3 +1,4 @@
+import { FormerAuthService } from './../services/former/former-auth.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UpdateformerprofileComponent implements OnInit {
 
-  constructor() { }
+  constructor(public formerAuthService:FormerAuthService) { }
 
   ngOnInit(): void {
   }

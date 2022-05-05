@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { Student } from '../model/student';
 import { StudentService } from '../services/student/student.service';
 import { HttpErrorResponse } from '@angular/common/http';
+import {Clipboard} from '@angular/cdk/clipboard';
 
 @Component({
   selector: 'app-studentprofile',
@@ -12,9 +13,11 @@ import { HttpErrorResponse } from '@angular/common/http';
 })
 export class StudentprofileComponent implements OnInit {
 
-  constructor(public studentAuthService:StudentAuthService,public studentService :StudentService) { }
+  constructor(public studentAuthService:StudentAuthService,public studentService :StudentService,private clipboard: Clipboard) { }
 
-
+  value =
+  `https//:wwww.welearn.com` 
+  ;
  
   ngOnInit() {
     this.getAll();

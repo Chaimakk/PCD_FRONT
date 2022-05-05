@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import {Clipboard} from '@angular/cdk/clipboard';
 @Component({
   selector: 'app-formerprofile',
   templateUrl: './formerprofile.component.html',

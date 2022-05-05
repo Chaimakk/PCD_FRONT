@@ -17,6 +17,10 @@ export class StudentAuthService {
   public roles!:Role[];
   public loggedFullName!:string;
   public loggedEmail!:string;
+  public loggedAddress!:string;
+  public loggedPostalCode!:number;
+  public loggedCity!:string;
+
 
 
   public setRoles(roles: []) {
@@ -54,6 +58,10 @@ export class StudentAuthService {
     this.loggedFullName=student.userFullName;
     this.loggedUser=student.userName;
     this.loggedEmail=student.userEmail;
+    this.loggedAddress=student.userAddress;
+    this.loggedPostalCode=student.userPostalCode;
+    this.loggedCity=student.userCity;
+
     this.isloggedIn = true;
     this.roles = student.roles;
     localStorage.setItem('loggedUser',this.loggedUser);

@@ -12,10 +12,10 @@ export class Former {
      userPostalCode!: number;
      userCity!: string; 
      userCountry!: string;
-     userLevel!:String;
-     userDomain!:String;
-     userExperience!:String;
-     userDescription!:String;
+     userLevel!:string;
+     userDomain!:string;
+     userExperience!:string;
+     userDescription!:string;
     
 
     roles!:Role[];

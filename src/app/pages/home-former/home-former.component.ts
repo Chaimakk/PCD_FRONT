@@ -63,8 +63,11 @@ constructor(config: NgbCarouselConfig,public formerAuthService:FormerAuthService
 
    }
 
-   
+   picture:any;
 ngOnInit(): void {
+  let loggedEmail: string;
+    loggedEmail=localStorage.getItem('loggedEmail')!;
+    this.formerService.getPicture(loggedEmail).subscribe((data: any)=>this.picture=data);
   this.tableData2={ gouvernorat: [ 'Ariana', 'Bèja', 'BenArous', 'Bizerte', 'Gabès',
   'Gafsa', 'Jendouba', 'Kairouan', 'Kasserine', 'Kébili',
   'Le Kef', 'Mahdia', 'La Manouba', 'Médenine', 'Monastir',

@@ -65,8 +65,10 @@ export class StudentAuthService {
     this.isloggedIn = true;
     this.roles = student.roles;
     localStorage.setItem('loggedUser',this.loggedUser);
-    localStorage.setItem('loggedFullName',this.loggedFullName);
+    localStorage.setItem('loggedEmail',this.loggedEmail);
+    localStorage.setItem('loggedCity',this.loggedCity);
     localStorage.setItem('isloggedIn',String(this.isloggedIn));
+  
     console.log(this.loggedUser);
  }
 

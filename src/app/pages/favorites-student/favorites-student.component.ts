@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CoursesService } from '../services/Courses/courses.service';
 
 @Component({
   selector: 'app-favorites-student',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FavoritesStudentComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(public coursesservice:CoursesService) { }
+courses:any;
   ngOnInit(): void {
+    this.coursesservice.getAllFavorites().subscribe((data: any)=>this.courses=data);
   }
 
 }

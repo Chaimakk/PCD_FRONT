@@ -10,10 +10,13 @@ import { StudentService } from '../services/student/student.service';
 })
 export class UpdateprofileComponent implements OnInit {
   updateStudent!:Student;
-  constructor(public serviceAuthStudent:StudentAuthService,public servicestudent :StudentService) { }
+  constructor(public studentAuthService:StudentAuthService,public servicestudent :StudentService) { }
  
-
+user:any;
   ngOnInit(): void {
+    let loggedEmail: string;
+    loggedEmail=localStorage.getItem('loggedEmail')!;
+    this.servicestudent.getUsersByEmail(loggedEmail).subscribe((data: any)=>this.user=data);
   
   }
  

@@ -29,10 +29,12 @@ images = [1055, 194, 368].map((n) => `https://picsum.photos/id/${n}/900/500`);
       picture:['']
     });
   }
+  count:any;
   ngOnInit() {
     let loggedEmail: string;
     loggedEmail=localStorage.getItem('loggedEmail')!;
     this.coursesservice.getCourseByEmail(loggedEmail).subscribe((data: any)=>this.courses=data);
+    // this.coursesservice.getCountCourses().subscribe((data: any)=>this.count=data);
   // this.coursesservice.getCourseByCategory(this.category).subscribe((data: any)=>this.courses=data);
    
   }
@@ -73,15 +75,15 @@ public onOpenModal(courses:any,mode:string):void{
 }
 
 public onUpdateCourses(courses:any): void {
-  this.coursesservice.updateCourses(courses).subscribe((data: any)=>this.courses=data);
+  this.coursesservice.modifyCourse(courses).subscribe((data: any)=>this.courses=data);
 }
 public onUpdateCourse(courses:Course): void {
-  //let loggedEmail: string;
-  //  loggedEmail=localStorage.getItem('loggedEmail')!;
-  this.coursesservice.updateCourses(courses).subscribe(
+  let loggedEmail: string;
+   loggedEmail=localStorage.getItem('loggedEmail')!;
+  this.coursesservice.modifyCourse(courses).subscribe(
     (response) => {
       console.log(response);
-    //  this.coursesservice.getCourseByEmail(loggedEmail);
+      this.coursesservice.getCourseByEmail(loggedEmail);
     },
     (error: HttpErrorResponse) => {
       console.log(error.message);
@@ -109,10 +111,18 @@ public onDeleteCourse(courseId: number){
  
   
 }
+/*public count(){
+  this.coursesservice.getAllCourses().subscribe(
+    (response: any) => {console.log('count te5dem')
+},
+(error) => {
+ //console.log(error);
+ console.log("count te5demch");
+ 
+}
+);
 
+}*/
 
 }
-
-
-
 

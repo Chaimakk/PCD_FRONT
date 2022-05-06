@@ -50,6 +50,8 @@ import { LanguageComponent } from './pages/category/language/language.component'
 import { PhysiquesComponent } from './pages/category/physiques/physiques.component';
 import { SportsComponent } from './pages/category/sports/sports.component';
 import { HomeStudentComponent } from './pages/home-student/home-student.component';
+import { AfficheProfileComponent } from './pages/affiche-profile/affiche-profile.component';
+import { FavoritesStudentComponent } from './pages/favorites-student/favorites-student.component';
 
 
 const routes: Routes = [{path:"",component:HomeComponent   },
@@ -120,12 +122,16 @@ const routes: Routes = [{path:"",component:HomeComponent   },
 {path:"courses/music", component:MusicComponent},
 {path:"music", component:MusicComponent},
 
+{path:"afficheprofile", component:AfficheProfileComponent},
+{path:"home/afficheprofile", component:AfficheProfileComponent},
+{path:"courses/chemistry/afficheprofile", component:AfficheProfileComponent},
 
 { path: 'image', component: ImageComponent},
 { path: 'admin/allstudenttable', component: AllstudentComponent},
 { path: 'admin/allformertable', component: AllformertableComponent},
 { path: 'admin/allcentertable', component: AllcentertableComponent},
 { path: 'admin/alladmintable', component: AlladmintableComponent},
+{ path: 'favoriteStudent', component: FavoritesStudentComponent},
 
 ];
 

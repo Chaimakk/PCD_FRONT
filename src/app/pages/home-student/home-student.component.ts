@@ -28,6 +28,7 @@ declare interface TableData3 {
 })
 export class HomeStudentComponent implements OnInit {
 
+
   opened=true;
   showFiller = false;
     
@@ -46,7 +47,7 @@ export class HomeStudentComponent implements OnInit {
   message=0;
   addForm:any;
   file!: File;
-  constructor(config: NgbCarouselConfig,public studentAuthService: StudentAuthService,public formerAuthService:FormerAuthService,public formerService:FormerService,private fb:FormBuilder, private courseservice:CoursesService) {
+  constructor(config: NgbCarouselConfig,public coursesservice :CoursesService, public studentAuthService: StudentAuthService,public formerAuthService:FormerAuthService,public formerService:FormerService,private fb:FormBuilder, private courseservice:CoursesService) {
     config.showNavigationArrows = true;
       config.showNavigationIndicators = true;
       this.foodForm=this.fb.group({
@@ -63,8 +64,12 @@ export class HomeStudentComponent implements OnInit {
   
      }
   
-     
+     courses:any;
   ngOnInit(): void {
+
+    let loggedCity: string;
+    loggedCity=localStorage.getItem('loggedCity')!;
+    this.coursesservice.getCourseByCity(loggedCity).subscribe((data: any)=>this.courses=data);
     this.tableData2={ gouvernorat: [ 'Ariana', 'Bèja', 'BenArous', 'Bizerte', 'Gabès',
     'Gafsa', 'Jendouba', 'Kairouan', 'Kasserine', 'Kébili',
     'Le Kef', 'Mahdia', 'La Manouba', 'Médenine', 'Monastir',

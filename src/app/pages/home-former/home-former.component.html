@@ -5,8 +5,12 @@
     
     
       <div style="align-items: center; align-self: center; display: flex; padding: 15px; "  >
-        
-        <img class="globalRoundProfile "  id="graft2" src="../../../assets/img/img3.jpg" >
+        <img    srcset="data:image/png;base64,{{picture}}" alt="" class="globalRoundProfile" id="graft2"  >
+
+        <!--<img *ngIf="formerAuthService.loggedUser=='former'" class="globalRoundProfile "  id="graft2" src="../../../assets/img/img3.jpg" >
+        <img *ngIf="formerAuthService.loggedUser=='mehdi'" class="globalRoundProfile "  id="graft2" src="../../../assets/img/img12.jpg" >
+        <img *ngIf="formerAuthService.loggedUser=='chaima'" class="globalRoundProfile "  id="graft2" src="../../../assets/img/img2.jpg" >-->
+
         <label for="graft2" style="padding-left: 10px; color: #261d51; font-size: medium; font-weight: bold;">{{formerAuthService.loggedUser}}</label>
         
     
@@ -60,7 +64,7 @@
       
               <div class="cover">
                   <div class="pro">
-                      <div class="globalRoundProfile" style="background-image: url(../../../assets/img/img/img1.jpg);"></div>
+                      <div class="globalRoundProfile" style="background-image: url(../../../assets/img/img2.jpg);"></div>
                   </div>
                   <h3>FilipCodes YT</h3>
                   <div class="bg" style="background-image: url(../../../assets/img/angular.jpg);">
@@ -109,9 +113,17 @@
       <!--barre de recherche-->
           <div class="createPost col-lg-12" style="margin-top: 80px;">
               <div class="input">
-                  <div class="globalRoundProfile" style="background-image: url(../../../assets/img/img3.jpg);">
+                <img    srcset="data:image/png;base64,{{picture}}" alt="" class="globalRoundProfile"  >
+
+                  <!--<div *ngIf="formerAuthService.loggedUser=='formerr'" class="globalRoundProfile" style="background-image: url(../../../assets/img/img3.jpg);">
                       <span></span>
                   </div>
+                  <div *ngIf="formerAuthService.loggedUser=='mehdi'" class="globalRoundProfile" style="background-image: url(../../../assets/img/img12.jpg);">
+                    <span></span>
+                </div>
+                <div *ngIf="formerAuthService.loggedUser=='chaima'" class="globalRoundProfile" style="background-image: url(../../../assets/img/img2.jpg);">
+                  <span></span>
+              </div>-->
                   <div class="post"  >
                       <form class="d-flex" >
                           <input class="form-control me-2" type="search" placeholder="Are you looking for a job ?" aria-label="Search" style="
@@ -276,14 +288,14 @@
           
           <div class="modal-footer" style="padding-top: 15px; align-self: center; align-items: center;
           display: flex; padding-bottom: 5px;">
-            <button type="button" class="btn btn-info" data-dismiss="modal" style="margin-right: 30px;
+            <button type="button" class="btn btn-info" data-dismiss="modal" style="margin-right: 20px;font-size: 19px;
              background-image: linear-gradient(to right, rgba(255,255,255,0.5), rgba(255,255,255,0.2) 20%, rgba(0,0,0,0.15) 51%, rgba(0,0,0,0.05));
     background-repeat: repeat-x;
-  border-radius:20px;">Close</button>
+  "> &nbsp; Close &nbsp;</button>
          
-          <input type="button" value="Add" class="btn btn-success" (click)="fnAdd()" style="background-image: linear-gradient(to right, rgba(255,255,255,0.5), rgba(255,255,255,0.2) 20%, rgba(0,0,0,0.15) 51%, rgba(0,0,0,0.05));
+          <input type="button" value="Add " class="btn btn-success" (click)="fnAdd()" style="margin-right: 20px;font-size: 19px;background-image: linear-gradient(to right, rgba(255,255,255,0.5), rgba(255,255,255,0.2) 20%, rgba(0,0,0,0.15) 51%, rgba(0,0,0,0.05));
           background-repeat: repeat-x;
-        border-radius:20px;">
+        ">
              </div>
             </form>
       </div>

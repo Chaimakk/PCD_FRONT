@@ -30,6 +30,28 @@ export class FormerService {
     return this.httpclient.get(`${this.PATH_OF_API}/roles/${roleName}`);
 
   }
+  getUsersByEmail(userEmail:String){
+    return this.httpclient.get(`${this.PATH_OF_API}/userEmail/${userEmail}`);
+
+  }
+  getCountFormer(roleName:String)
+        {
+          return this.httpclient.get(`${this.PATH_OF_API}/users/count/${roleName}`, {
+            headers: this.requestHeader,
+          });
+        }
+  getDistinctCoursesByEmail()
+        {
+          return this.httpclient.get(`${this.PATH_OF_API}/distinct-former`, {
+            headers: this.requestHeader,
+          });
+        }
+  getPicture(formerEmail:String)
+        {
+          return this.httpclient.get(`${this.PATH_OF_API}/picture/${formerEmail}`, {
+            headers: this.requestHeader,
+          });
+        }
   public deleteFormer(former:String) :Observable<void> {
     return this.httpclient.delete<void>(`${this.PATH_OF_API}/delete-user/${former}`);
 

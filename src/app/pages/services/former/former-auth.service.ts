@@ -69,6 +69,7 @@ public loggedDescription!:string;
 
     localStorage.setItem('loggedUser',this.loggedUser);
     localStorage.setItem('loggedEmail',this.loggedEmail);
+    localStorage.setItem('loggedCity',this.loggedCity);
     //localStorage.setItem('isloggedInF',String(this.isloggedInF));
     localStorage.setItem('isloggedIn',String(this.isloggedIn));
     console.log(this.loggedUser);

@@ -12,6 +12,7 @@ export class FormerprofileComponent implements OnInit {
   `https//:wwww.welearn.com` 
   ;
   ngOnInit(): void {
+    
   }
   course= [
     {'id':1,'name':'Nouveau message','firstname':'français avec Mehdi njema ','description':'Lorem Ipsum is simply dummy text of the printing and typesetting industry','image':'../../../assets/img/img8.jpg','linkpage':'allprof'},

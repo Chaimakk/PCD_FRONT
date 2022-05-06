@@ -5,7 +5,7 @@
     
     <div style="align-items: center; align-self: center; display: flex; padding: 15px; "  >
       
-      <img class="globalRoundProfile "  id="graft2" src="../../../assets/img/img3.jpg" >
+      <img class="globalRoundProfile "  id="graft2" src="../../../assets/img/use1.png" >
       <label for="graft2" style="padding-left: 10px; color: #261d51; font-size: medium; font-weight: bold;">{{studentAuthService.loggedStudent}}</label>
       
   
@@ -38,7 +38,7 @@
     <button type="button" mat-button (click)="drawer.toggle()">
       Toggle sidenav
     </button>
-    <div class="row ml-4 mr-4" style="padding-top: 60px;">
+    <div class="row ml-4 mr-4" >
   
   
 
@@ -108,9 +108,9 @@
               </div>
           </div>
       <!--barre de recherche-->
-          <div class="createPost col-lg-12" style="margin-top: 150px;">
+          <div class="createPost col-lg-12" style="margin-top: 70px;">
               <div class="input">
-                  <div class="globalRoundProfile" style="background-image: url(../../../assets/img/img3.jpg);">
+                  <div class="globalRoundProfile" style="background-image: url(../../../assets/img/use1.png);">
                       <span></span>
                   </div>
                   <div class="post"  >
@@ -142,33 +142,71 @@
   <!--carrousel-->
   
   <div class="card " style=" align-items: center;
-  align-self: center; display: flex; background-color:aliceblue ; border: none; padding-top: 200px; margin:auto;">
- <h1 class="text-center" >All Courses</h1>
- <ngb-carousel *ngIf="images" [showNavigationArrows]="showNavigationArrows" 
+  align-self: center; display: flex; background-color:aliceblue ; border: none; padding-top: 70px; margin:auto;">
+ <h1 class="text-center" >Recommended  Course</h1>
+ <div class="row mt-5" >
+    <div class="col-lg-4 mb-5" *ngFor="let c of courses">
+      
+<div class="card card-one">
+<div class="multi-button">
+  <button class="fas fa-heart"></button>
+  <button class="fas fa-star"></button>
+</div>
+<header>
+  <div class="avatar">
+    <img srcset="data:image/png;base64,{{c.picture}}"  alt="Jhon Doe" />
+  </div>
+</header>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<h3>{{c.formerName}}</h3>
+<div class="desc " style="font-weight:bold; font-size: large; opacity:90%;">
+  <i class="fa fa-book"></i>
+  {{c.courseName}}</div>
+  <div class="contacts" style="display: block;">
+    <a href=""><i class="fa fa-location-arrow" style ="font-size: 24px;" ></i><span style="margin-left:10px;">{{c.city}}</span></a>
+    <a href=""><i class="fa fa-phone" style ="font-size: 22px;"></i><span style="margin-left:10px;" >{{c.phoneNumber}}</span></a>
+    <a href=""><i class="fa fa-envelope"></i><span style="margin-left:10px;">{{c.formerEmail}}</span></a>
+    <a href=""><i class="fa fa-money"></i><span style="margin-left:10px;">{{c.price}}  <strong>DT</strong></span></a>
+    <div class="clear"></div>
+  </div>
+
+<footer>
+  <a href=""><i class="fab fa-facebook"></i></a>
+  <a href=""><i class="fab fa-linkedin"></i></a>
+  <a href=""><i class="fab fa-twitter"></i></a>
+  <a href=""><i class="fab fa-instagram"></i></a>
+</footer>
+</div>
+</div>
+</div>
+
+ <!--<ngb-carousel *ngIf="images" [showNavigationArrows]="showNavigationArrows" 
  [showNavigationIndicators]="showNavigationIndicators"  >
  
-   <ng-template ngbSlide *ngFor="let slide of course" style="padding: auto;">
+   <ng-template ngbSlide *ngFor="let slide of courses" style="padding: auto;">
      
-     <div class="container" style="align-items: center; align-self: center;">
+    
+  <div class="container" style="align-items: center; align-self: center;">
        
    
-       <div class="row mt-5 m-auto" >
-           <div class="col-lg-3 mb-5 " *ngFor="let cs of slide">
-               <div class="box shadow-sm mr-4 ml-4" style="background-color: #fff;">
-                   <img srcset="{{cs.image}}" width="100%">
-                   <h4 class="mt-2">{{cs.name}}</h4>
-                   <p clas="mt-2">{{cs.description}}</p>
-                   <button class="btn btn-dark btn-sm mt-2" routerLink="{{cs.linkpage}}">Enroll now</button>
-               </div>
-   
-           </div>
-       </div>
-   
+       
+        <div class="row mt-5 m-auto" >
+            <div class="col-lg-3 mb-5 " *ngFor="let cs of slide">
+                <div class="box shadow-sm mr-4 ml-4" style="background-color: #fff;">
+                    <img srcset="{{cs.image}}" width="100%">
+                    <h4 class="mt-2">{{cs.name}}</h4>
+                    <p clas="mt-2">{{cs.description}}</p>
+                    <button class="btn btn-dark btn-sm mt-2" routerLink="{{cs.linkpage}}">Enroll now</button>
+                </div>
+    
+            </div>
+        </div>
    </div>
    </ng-template>
    
  </ngb-carousel>
- 
+-->
  
  <hr>
  </div>

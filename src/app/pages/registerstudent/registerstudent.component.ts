@@ -3,7 +3,8 @@ import { User } from './../model/user';
 import { UserService } from './../services/user/user.service';
 import { Student } from './../model/student';
 import { Component, OnInit } from '@angular/core';
-import {NgForm} from '@angular/forms';
+import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
+
 import { HttpErrorResponse } from '@angular/common/http';
 import { StudentService } from '../services/student/student.service';
 @Component({
@@ -19,10 +20,15 @@ export class RegisterstudentComponent implements OnInit {
  private _invalidLogin : boolean = false;
   private _errorMessage: any;
 public loggedFullName!:string;
-  constructor(private studentservice:StudentService,private router :Router) { }
+  dropdownList!: any[];
+dropdownSettings!: { singleSelection: boolean; idField: string; textField: string; selectAllText: string; unSelectAllText: string; };
+
+  constructor(private studentservice:StudentService,private router :Router,private formBuilder : FormBuilder) { }
 
   ngOnInit(): void {
+   
   }
+ 
 
   get invalidLogin(): boolean {
     return this._invalidLogin;

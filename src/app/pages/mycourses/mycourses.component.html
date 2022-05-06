@@ -102,15 +102,16 @@
            <img srcset="data:image/png;base64,{{c.picture}}"  alt="Jhon Doe" />
          </div>
        </header>
-   
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
        <h3>{{c.formerName}}</h3>
        <div class="desc " style="font-weight:bold; font-size: large; opacity:90%;">
          <i class="fa fa-book"></i>
          {{c.courseName}}</div>
-       <div class="contacts" style="display: block;">
-         <a href=""><i class="fa fa-location-arrow"></i><span style="margin-left:10px;">{{c.city}}</span></a>
-         <a href=""><i class="fa fa-phone"></i><span style="margin-left:10px;" >{{c.phoneNumber}}</span></a>
+       <div class="contacts" style="display: block; ">
+         <a href=""><i class="fa fa-location-arrow" style ="font-size: 24px;" ></i><span style="margin-left:10px;">{{c.city}}</span></a>
+         <a href=""><i class="fa fa-phone" style ="font-size: 22px;"></i><span style="margin-left:10px;" >{{c.phoneNumber}}</span></a>
          <a href=""><i class="fa fa-envelope"></i><span style="margin-left:10px;">{{c.formerEmail}}</span></a>
+         <a href=""><i class="fa fa-money"></i><span style="margin-left:10px;">{{c.price}}  <strong>DT</strong></span></a>
          <div class="clear"></div>
        </div>
    
@@ -130,7 +131,7 @@
          <div class="modal-dialog" role="document">
             <div class="modal-content">
                <div class="modal-header">
-                  <h5 class="modal-title" id="updatecourseModalLabel">Edit Course {{updatecourse?.courseName}}</h5>
+                  <h2 class="modal-title" id="updatecourseModalLabel">Edit Course <strong>{{updatecourse?.courseName}}</strong> </h2>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                   </button>
@@ -138,25 +139,37 @@
                <div class="modal-body">
                   <form #editForm="ngForm">
                      <div class="form-group">
-                        <label for="name">Name</label>
+                        <label for="name"><strong>Full Name</strong></label>
                         <input type="text" ngModel="{{updatecourse?.formerName}}" name="formerName" class="form-control" id="formerName" aria-describedby="emailHelp" placeholder="Name">
                      </div>
                      <input type="hidden" ngModel="{{updatecourse?.id}}" name="id" class="form-control" id="id" placeholder="Email">
                      <div class="form-group">
-                        <label for="email">Email</label>
+                        <label for="email"><strong>Email</strong></label>
                         <input type="email" ngModel="{{updatecourse?.formerEmail}}" name="formerEmail" class="form-control" id="formerEmail" placeholder="Email">
                      </div>
                      <div class="form-group">
-                        <label for="phone">Course's Name</label>
+                        <label for="city"><strong>City</strong></label>
+                        <input type="text" ngModel="{{updatecourse?.city}}" name="city" class="form-control" id="city" placeholder="City">
+                     </div>
+                     <div class="form-group">
+                        <label for="phoneNumber"><strong>Phone Number</strong></label>
+                        <input type="int" ngModel="{{updatecourse?.phoneNumber}}" name="phoneNumber" class="form-control" id="phoneNumber" placeholder="Phone Number">
+                     </div>
+                     <div class="form-group">
+                        <label for="courseName"><strong>Course's Name</strong></label>
                         <input type="text" ngModel="{{updatecourse?.courseName}}" name="courseName" class="form-control" id="courseName" placeholder="Course's Name">
                      </div>
                      <div class="form-group">
-                        <label for="phone">Price</label>
+                        <label for="price"><strong>Price</strong></label>
                         <input type="number" ngModel="{{updatecourse?.price}}" name="price" class="form-control" id="price" name="price" placeholder="Price">
                      </div>
                      <div class="form-group">
-                        <label for="phone">Picture</label>
+                        <label for="picture"><strong>Picture</strong></label>
                         <input type="file" ngModel="{{updatecourse?.picture}}" name="file" class="form-control" id="imageUrl" placeholder="Image URL">
+                     </div>
+                     <div class="form-group">
+                        <label for="description"><strong>Description</strong></label>
+                        <input type="text" ngModel="{{updatecourse?.description}}" name="price" class="form-control" id="description" name="description" placeholder="Description">
                      </div>
                      <div class="modal-footer">
                         <button type="button" id="" data-dismiss="modal" class="btn btn-secondary">Close</button>
@@ -173,13 +186,13 @@
          <div class="modal-dialog" role="document">
             <div class="modal-content">
                <div class="modal-header">
-                  <h5 class="modal-title" id="deleteModelLabel">Delete Courses</h5>
+                  <h2 class="modal-title" id="deleteModelLabel">Delete Courses</h2>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                   </button>
                </div>
                <div class="modal-body">
-                  <p>Are you sure you want to delete employee {{deletecourses?.courseName}}?</p>
+                  <p>Are you sure you want to delete <strong>{{deletecourses?.courseName}}</strong> course ?</p>
                   <div class="modal-footer">
                      <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
                      <button (click)="onDeleteCourse(deletecourses.id)" class="btn btn-danger" data-dismiss="modal">Yes</button>

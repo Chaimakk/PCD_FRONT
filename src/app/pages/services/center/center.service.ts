@@ -29,6 +29,12 @@ export class CenterService {
     return this.httpclient.get(`${this.PATH_OF_API}/roles/${roleName}`);
 
   }
+  getCountCenter(roleName:String)
+        {
+          return this.httpclient.get(`${this.PATH_OF_API}/users/count/${roleName}`, {
+            headers: this.requestHeader,
+          });
+        }
   public deleteCenter(center:String) :Observable<void> {
     return this.httpclient.delete<void>(`${this.PATH_OF_API}/delete-user/${center}`);
 

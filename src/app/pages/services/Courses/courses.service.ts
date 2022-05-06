@@ -20,8 +20,31 @@ export class CoursesService {
       headers: this.requestHeader,
     });
   }
+  getCountCourses()
+  {
+    return this.http.get(`${this.PATH_OF_API}/courses/count`, {
+      headers: this.requestHeader,
+    });
+  }
+  getAllFavorites()
+  {
+    return this.http.get(`${this.PATH_OF_API}/allFavorite`, {
+      headers: this.requestHeader,
+    });
+  }
   getCourseByEmail(formerEmail: String){
     return this.http.get(`${this.PATH_OF_API}/email/${formerEmail}`,{
+      headers: this.requestHeader,
+    });
+  }
+  putFavorite(id: number){
+ 
+    return this.http.put(`${this.PATH_OF_API}/Favorite/${id}`,{
+      headers: this.requestHeader,
+    });
+  }
+  getCourseByCity(city: String){
+    return this.http.get(`${this.PATH_OF_API}/city/${city}`,{
       headers: this.requestHeader,
     });
   }
@@ -67,7 +90,7 @@ export class CoursesService {
   
   modifyCourse(course:any)
   {
-    return this.http.put(this.url,course,{
+    return this.http.put(`${this.PATH_OF_API}/updateCourses`,course,{
       headers: this.requestHeader,
     });
   }

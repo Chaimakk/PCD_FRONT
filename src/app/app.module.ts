@@ -1,5 +1,5 @@
 import { StudentService } from './pages/services/student/student.service';
-
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import{MatListModule} from '@angular/material/list'
 import{MatDividerModule} from '@angular/material/divider'
@@ -83,6 +83,7 @@ import { MusicComponent } from './pages/category/music/music.component';
 import { SportsComponent } from './pages/category/sports/sports.component';
 import { ChemistryComponent } from './pages/category/chemistry/chemistry.component';
 import { HomeStudentComponent } from './pages/home-student/home-student.component';
+import { AfficheProfileComponent } from './pages/affiche-profile/affiche-profile.component';
 
 @NgModule({
   declarations: [
@@ -139,6 +140,7 @@ import { HomeStudentComponent } from './pages/home-student/home-student.componen
          SportsComponent,
          ChemistryComponent,
     HomeStudentComponent,
+    AfficheProfileComponent,
   ],
   imports: [
     BrowserModule,
@@ -163,7 +165,8 @@ import { HomeStudentComponent } from './pages/home-student/home-student.componen
     ClipboardModule,
     MatSidenavModule,
     MatListModule,
-    MatDividerModule
+    MatDividerModule,
+    NgMultiSelectDropDownModule
 
 
 

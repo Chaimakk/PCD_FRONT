@@ -1,9 +1,11 @@
+
+
 <section class="register-student" style="padding-top: 80px;">
     <div class="container mt-1 mb-1 m-auto shadow-lg " style="background-color: #fff;">
       <br>
         <h2 class="col-lg-6  m-auto" style="font-weight: bold ;font-size: 2em;align-items: center; text-align: center;">Student Registration</h2><br>
         
-        <form #myForm="ngForm" (ngSubmit)="myForm.valid && registerNewStudent(myForm)"  class="register col-lg-6 m-auto " style="font-weight: bold ;font-size: 1.2em;" >
+        <form #myForm="ngForm"  (ngSubmit)="myForm.valid && registerNewStudent(myForm)"  class="register col-lg-6 m-auto " style="font-weight: bold ;font-size: 1.2em;" >
          <div class="alert alert-danger" *ngIf='invalidLogin'>{{errorMessage}}</div>
         <!--- <div class="alert alert-danger" *ngIf="userPassword!=userConfirmPassword" > 
             <strong>The username or password is incorrect. Try again.</strong>
@@ -65,7 +67,7 @@
                 <label >Postal Code <span class="text-danger">*</span><Code></Code></label>
               <input name="userPostalCode"  [(ngModel)]="user.userPostalCode" #userPostalCode="ngModel" [ngClass]="{'is-invalid':myForm.submitted && userPostalCode.invalid}" required type="number" class="form-control"  >
             </div>
-            
+         
                 <div class="col-lg-8">
                   <label class="checkbox">
                     <input   [(ngModel)]="terms" type="checkbox" ngModel name="userTerms"  >

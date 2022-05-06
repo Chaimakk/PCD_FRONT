@@ -75,11 +75,11 @@
           <a class="nav-link b   " *ngIf="formerService.roleMatchF(['Former'])&& isLoggedIn()" style="color: #261d51; font-weight: bold; font-size: 1.2em;  " routerLink="formerprofile">Profile</a>
         </li>
         <li class="nav-item " >
-          <a class="nav-link b   " *ngIf="centerservice.roleMatchC(['Center'])&& isLoggedIn()" style="color: #261d51; font-weight: bold; font-size: 1.2em;  " routerLink="formerprofile">Profile</a>
+          <a class="nav-link b " *ngIf="centerservice.roleMatchC(['Center'])&& isLoggedIn()" style="color: #261d51; font-weight: bold; font-size: 1.2em;  " routerLink="formerprofile">Profile</a>
         </li>
         <li class="nav-item ">
           
-          <button mat-icon-button  *ngIf="studentService.roleMatch(['Student'])&&isLoggedIn()" class="nav-link b   " routerLink="studentprofile" aria-label="Example icon button with a heart icon">
+          <button mat-icon-button  *ngIf="studentService.roleMatch(['Student'])&&isLoggedIn()" class="nav-link b   " routerLink="favoriteStudent" aria-label="Example icon button with a heart icon">
             <mat-icon style="color: #261d51;">favorite</mat-icon>
           </button>
         </li>

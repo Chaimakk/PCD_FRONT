@@ -37,6 +37,16 @@ export class StudentService {
           return this.httpclient.get(`${this.PATH_OF_API}/roles/${roleName}`);
       
         }
+    getUsersByEmail(userEmail:String){
+          return this.httpclient.get(`${this.PATH_OF_API}/userEmail/${userEmail}`);
+      
+        }
+        getCountStudent(roleName:String)
+        {
+          return this.httpclient.get(`${this.PATH_OF_API}/users/count/${roleName}`, {
+            headers: this.requestHeader,
+          });
+        }
         public deleteStudent(student:String) :Observable<void> {
           return this.httpclient.delete<void>(`${this.PATH_OF_API}/delete-user/${student}`);
       

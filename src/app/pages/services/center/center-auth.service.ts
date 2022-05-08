@@ -11,6 +11,8 @@ export class CenterAuthService {
   constructor(private router:Router) { }
   public loggedCenter!:string;
   public loggedUser!:string;
+  public loggedTelephoneNumber!:string;
+  public loggedEmail!:string;
   public isloggedIn: Boolean = false;
   public roles!:Role[];
 
@@ -40,11 +42,15 @@ export class CenterAuthService {
   signInC(center :Center){
     this.loggedCenter = center.userName;
     this.loggedUser= center.userName;
+    this.loggedEmail=center.userEmail;
+    this.loggedTelephoneNumber=center.userTelephoneNumber;
     //this.isloggedInC= true;
     this.isloggedIn= true;
     this.roles = center.roles;
     localStorage.setItem('loggedUser',this.loggedUser);
     localStorage.setItem('isloggedIn',String(this.isloggedIn));
+    localStorage.setItem('loggedTelephoneNumber',this.loggedTelephoneNumber);
+    localStorage.setItem('loggedEmail',this.loggedEmail);
     console.log(this.loggedCenter);
  }
 

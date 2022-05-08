@@ -41,15 +41,15 @@ readonly = false;
 public tableData1!: TableData;
 public tableData2!: TableData1;
 
-foodForm:any;
+
 // @ts-ignore
 message=0;
-addForm:any;
+courseForm:any;
 file!: File;
 constructor(config: NgbCarouselConfig,public formerAuthService:FormerAuthService,public formerService:FormerService,private fb:FormBuilder, private courseservice:CoursesService) {
   config.showNavigationArrows = true;
     config.showNavigationIndicators = true;
-    this.foodForm=this.fb.group({
+    this.courseForm=this.fb.group({
       price:[''],
       courseName:[''],
       category:[''],
@@ -64,6 +64,9 @@ constructor(config: NgbCarouselConfig,public formerAuthService:FormerAuthService
    }
 
    picture:any;
+  public formerEmail=localStorage.getItem('loggedEmail')!;
+  public formerPhoneNumber=localStorage.getItem('loggedTelephoneNumber')!;
+
 ngOnInit(): void {
   let loggedEmail: string;
     loggedEmail=localStorage.getItem('loggedEmail')!;
@@ -151,15 +154,15 @@ public isLoggedInF() {
   {
     this.message=1;
     var fd=new FormData();
-    // alert(this.foodForm.controls['expiryDate'].value);
-    fd.append("price",this.foodForm.controls['price'].value);
-    fd.append("courseName",this.foodForm.controls['courseName'].value);
-    fd.append("category",this.foodForm.controls['category'].value);
-    fd.append("description",this.foodForm.controls['description'].value);
-    fd.append("formerName",this.foodForm.controls['formerName'].value);
-    fd.append("formerEmail",this.foodForm.controls['formerEmail'].value);
-    fd.append("city",this.foodForm.controls['city'].value);
-    fd.append("phoneNumber",this.foodForm.controls['phoneNumber'].value);
+
+    fd.append("price",this.courseForm.controls['price'].value);
+    fd.append("courseName",this.courseForm.controls['courseName'].value);
+    fd.append("category",this.courseForm.controls['category'].value);
+    fd.append("description",this.courseForm.controls['description'].value);
+    fd.append("formerName",this.courseForm.controls['formerName'].value);
+    fd.append("formerEmail",this.courseForm.controls['formerEmail'].value);
+    fd.append("city",this.courseForm.controls['city'].value);
+    fd.append("phoneNumber",this.courseForm.controls['phoneNumber'].value);
     fd.append("picture",this.file,this.file.name);
 
     this.courseservice.addCourse(fd).subscribe((data: any)=>console.log(data));

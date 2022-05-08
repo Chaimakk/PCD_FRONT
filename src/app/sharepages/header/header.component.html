@@ -29,7 +29,7 @@
   <button mat-mini-fab color="primary" aria-label="Example icon button with a delete icon" 
   *ngIf="! isLoggedIn()"
   class="nav-link" routerLink="home">
-    <mat-icon style="color: #fff;">home</mat-icon>
+    <mat-icon style="color:#261d51;">home</mat-icon>
   </button>
 
    <button mat-mini-fab  aria-label="Example icon button with a delete icon" 
@@ -37,16 +37,16 @@
   class="nav-link " routerLink="home-student" style="background-color: darkgray;" >
     <mat-icon style="color: #261d51;" matTooltip="Dashboard" >dashboard</mat-icon>
   </button>
-  <button mat-mini-fab color="primary" aria-label="Example icon button with a delete icon" 
+  <button mat-mini-fab style="background-color: cadetblue;" aria-label="Example icon button with a delete icon" 
   *ngIf="formerService.roleMatchF(['Former'])&& isLoggedIn()"
   class="nav-link" routerLink="home-former">
-    <mat-icon style="color: #fff;">dashboard</mat-icon>
+    <mat-icon style="color:#261d51;" matTooltip="Dashboard">dashboard</mat-icon>
   </button>
 
   <button mat-mini-fab color="primary" aria-label="Example icon button with a delete icon" 
   *ngIf="centerservice.roleMatchC(['Center'])&& isLoggedIn()"
   class="nav-link" routerLink="home-center">
-    <mat-icon style="color: #fff;">dashboard</mat-icon>
+    <mat-icon style="color: #261d51;" matTooltip="Dashboard">dashboard</mat-icon>
   </button>
 
       </li>
@@ -71,11 +71,15 @@
           </button>
         </li>
 
-        <li class="nav-item " >
-          <a class="nav-link b   " *ngIf="formerService.roleMatchF(['Former'])&& isLoggedIn()" style="color: #261d51; font-weight: bold; font-size: 1.2em;  " routerLink="formerprofile">Profile</a>
-        </li>
-        <li class="nav-item " >
-          <a class="nav-link b " *ngIf="centerservice.roleMatchC(['Center'])&& isLoggedIn()" style="color: #261d51; font-weight: bold; font-size: 1.2em;  " routerLink="formerprofile">Profile</a>
+        
+        
+        <li class="nav-item ">
+          
+          <button mat-icon-button  *ngIf="centerservice.roleMatchC(['Center'])&& isLoggedIn()" class="nav-link b   " routerLink="studentprofile" aria-label="Example icon button with a heart icon">
+            <mat-icon style="color: #261d51;" matTooltip="Favorites">account_circle</mat-icon>
+            
+           
+          </button>
         </li>
         <li class="nav-item ">
           
@@ -84,11 +88,25 @@
           </button>
         </li>
         <li class="nav-item ">
-          <a *ngIf="formerService.roleMatchF(['Former'])&& isLoggedIn()" class="nav-link b " style="color: #261d51;  font-weight: bold;font-size: 1.2em;" routerLink="former-chat"  >Bills</a>
+          
+          <button mat-icon-button  *ngIf="formerService.roleMatchF(['Former'])&&isLoggedIn()" class="nav-link b   " routerLink="formerprofile" aria-label="Example icon button with a heart icon">
+            <mat-icon style="color: #261d51;" matTooltip="Profile">account_circle</mat-icon>
+            
+           
+          </button>
+        </li>
+        <li class="nav-item ">
+          
+          <button mat-icon-button  *ngIf="formerService.roleMatchF(['Former'])&&isLoggedIn()" class="nav-link b   " routerLink="studentprofile" aria-label="Example icon button with a heart icon">
+            <mat-icon style="color: #261d51;" matTooltip="Center's announcment">account_balance</mat-icon>
+          </button>
         </li>
         
-        <li class="nav-item  ">
-          <a *ngIf="formerService.roleMatchF(['Former'])&& isLoggedIn()"  class="nav-link b " style="color: #261d51;  font-weight: bold;font-size: 1.2em;" routerLink="messages-former"   >Messages</a>
+        <li class="nav-item ">
+          
+          <button mat-icon-button  *ngIf="formerService.roleMatchF(['Former'])&&isLoggedIn()" class="nav-link b   " routerLink="studentprofile" aria-label="Example icon button with a heart icon">
+            <mat-icon style="color: #261d51;" matTooltip="Your CV">description</mat-icon>
+          </button>
         </li>
        
        
@@ -113,7 +131,7 @@
         <li class="nav-item">
          
           <button mat-icon-button  class="nav-link" routerLink="courses"  *ngIf=" isLoggedIn()" aria-label="Example icon button with a plus one icon">
-            <mat-icon matTooltip="Info about the action" style="color: #261d51;">book</mat-icon>
+            <mat-icon matTooltip="Courses" style="color: #261d51;">book</mat-icon>
           </button>
         </li>
        
@@ -129,17 +147,23 @@
                     {{formerAuthService.loggedUser}}</a>
                     <a  *ngIf="centerservice.roleMatchC(['Center'])" class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown" style="font-weight: bold;font-size: 1.2em; color: #261d51;">
                       {{centerAuthService.loggedUser}}</a>
+                      <a  *ngIf="adminService.roleMatchA(['Admin'])" class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown" style="font-weight: bold;font-size: 1.2em; color: #261d51;">
+                        {{adminAuthService.loggedUser}}</a>
                 
                 
               <div class="dropdown-menu" style="border-radius: 20px; background-color: #261d51;">
                 <a *ngIf="studentService.roleMatch(['Student'])" class="dropdown-item" routerLink="studentprofile" style="font-weight: bold; color: #fff; ">Profile</a>
                 <a *ngIf="formerService.roleMatchF(['Former'])" class="dropdown-item" routerLink="formerprofile" style="font-weight: bold; color: #fff;">Profile</a>
-  
-                <a class="dropdown-item" href="#" routerLink="mycourses" style="font-weight: bold; color: #fff;">My courses</a>
+                <a *ngIf="formerService.roleMatchF(['Center'])" class="dropdown-item" routerLink="centerprofile" style="font-weight: bold; color: #fff;">Profile</a>
+               
+                <a *ngIf="formerService.roleMatchF(['Former'])" class="dropdown-item"  routerLink="mycourses" style="font-weight: bold; color: #fff;">My courses</a>
+                <a *ngIf="centerservice.roleMatchC(['Center'])"  class="dropdown-item" routerLink="mycourses" style="font-weight: bold; color: #fff;">My courses</a>
+
                 <a *ngIf="studentService.roleMatch(['Student'])" class="dropdown-item" (click) = "onLogout()" style="font-weight: bold; color: #fff;">Logout</a>
                 <a *ngIf="formerService.roleMatchF(['Former'])" class="dropdown-item" (click) = "onLogoutF()" style="font-weight: bold;color: #fff;">Logout</a>
-                <a *ngIf="formerService.roleMatchF(['Center'])" class="dropdown-item" (click) = "onLogoutC()" style="font-weight: bold;color: #fff;">Logout</a>
-  
+                <a *ngIf="centerservice.roleMatchC(['Center'])" class="dropdown-item" (click) = "onLogoutC()" style="font-weight: bold;color: #fff;">Logout</a>
+                <a *ngIf="adminService.roleMatchA(['Admin'])" class="dropdown-item" (click) = "onLogoutA()" style="font-weight: bold;color: #fff;">Logout</a>
+
               </div>
             </li>
           

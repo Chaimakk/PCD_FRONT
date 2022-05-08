@@ -9,6 +9,8 @@ import { Component, OnInit } from '@angular/core';
 import { Role } from 'src/app/pages/model/role';
 import { StudentService } from 'src/app/pages/services/student/student.service';
 import { CenterService } from 'src/app/pages/services/center/center.service';
+import { AdminService } from 'src/app/pages/services/admin/admin.service';
+import { AdminAuthService } from 'src/app/pages/services/admin/admin-auth.service';
 
 @Component({
   selector: 'app-header',
@@ -18,7 +20,10 @@ import { CenterService } from 'src/app/pages/services/center/center.service';
 export class HeaderComponent implements OnInit {
   public isMenuCollapsed = true;
   
-  constructor(public studentAuthService:StudentAuthService,private router:Router,public studentService:StudentService,public formerAuthService:FormerAuthService,public formerService:FormerService, public centerAuthService: CenterAuthService,public centerservice:CenterService){}
+  constructor(public studentAuthService:StudentAuthService,private router:Router,
+    public studentService:StudentService,public formerAuthService:FormerAuthService,
+    public formerService:FormerService, public centerAuthService: CenterAuthService,
+    public centerservice:CenterService,public adminService:AdminService,public adminAuthService:AdminAuthService){}
  /* onLogout(){
     this.service.Logout();
   }
@@ -56,6 +61,9 @@ export class HeaderComponent implements OnInit {
   }
   onLogoutC(){
     this.centerAuthService.logoutC();
+  }
+  onLogoutA(){
+    this.adminAuthService.logoutA();
   }
 
 }

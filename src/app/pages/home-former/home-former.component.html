@@ -1,4 +1,4 @@
-
+<!----
 <mat-drawer-container class="example-container"  autosize >
   <mat-drawer #drawer class="example-sidenav" mode="side" [opened]="true"style="padding-top: 70px;">
     
@@ -7,10 +7,7 @@
       <div style="align-items: center; align-self: center; display: flex; padding: 15px; "  >
         <img    srcset="data:image/png;base64,{{picture}}" alt="" class="globalRoundProfile" id="graft2"  >
 
-        <!--<img *ngIf="formerAuthService.loggedUser=='former'" class="globalRoundProfile "  id="graft2" src="../../../assets/img/img3.jpg" >
-        <img *ngIf="formerAuthService.loggedUser=='mehdi'" class="globalRoundProfile "  id="graft2" src="../../../assets/img/img12.jpg" >
-        <img *ngIf="formerAuthService.loggedUser=='chaima'" class="globalRoundProfile "  id="graft2" src="../../../assets/img/img2.jpg" >-->
-
+        
         <label for="graft2" style="padding-left: 10px; color: #261d51; font-size: medium; font-weight: bold;">{{formerAuthService.loggedUser}}</label>
         
     
@@ -45,7 +42,7 @@
   
   
 
-      <!--add-->
+     
       <div class="col-lg-12 mt-5 ">
       <div class=" sectionCenter">
       
@@ -110,20 +107,11 @@
                   
               </div>
           </div>
-      <!--barre de recherche-->
           <div class="createPost col-lg-12" style="margin-top: 80px;">
               <div class="input">
                 <img    srcset="data:image/png;base64,{{picture}}" alt="" class="globalRoundProfile"  >
 
-                  <!--<div *ngIf="formerAuthService.loggedUser=='formerr'" class="globalRoundProfile" style="background-image: url(../../../assets/img/img3.jpg);">
-                      <span></span>
-                  </div>
-                  <div *ngIf="formerAuthService.loggedUser=='mehdi'" class="globalRoundProfile" style="background-image: url(../../../assets/img/img12.jpg);">
-                    <span></span>
-                </div>
-                <div *ngIf="formerAuthService.loggedUser=='chaima'" class="globalRoundProfile" style="background-image: url(../../../assets/img/img2.jpg);">
-                  <span></span>
-              </div>-->
+              
                   <div class="post"  >
                       <form class="d-flex" >
                           <input class="form-control me-2" type="search" placeholder="Are you looking for a job ?" aria-label="Search" style="
@@ -150,8 +138,7 @@
   </div>
 
 
-  <!--carrousel-->
-  
+    
   <div class="card " style=" align-items: center;
   align-self: center; display: flex; background-color:#fafafa  ; border: none; padding-top: 70px; margin:auto;">
  <h1 class="text-center" >All Courses</h1>
@@ -223,7 +210,7 @@
 
 
 </mat-drawer-container>
-  <!-- Modal -->
+
 <div class="modal fade m-auto shadow-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered " role="document" style="margin: auto; ">
       <div class="modal-content" style="padding-top: 15px;">
@@ -301,81 +288,206 @@
       </div>
     </div>
   </div>
-  <!--<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-       <div class="modal-content">
-          <div class="modal-header">
-             <h5 class="modal-title" id="exampleModalLabel">Upload Courses</h5>
-             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-             <span aria-hidden="true">&times;</span>
-             </button>
-          </div>
-          <div class="modal-body">
-             <form [formGroup]="foodForm">
-                <div class="form-group">
-                   <label for="name">Full Name</label>
-                   <input type="text" name="" id="" formControlName="formerName" class="form-control">
-                  </div>
-                <div class="form-group">
-                   <label for="email">Email</label>
-                   <input type="email" name="" id="" formControlName="formerEmail" class="form-control">
-                  </div>
-                  <div class="form-group">
-                    <label for="phone">City</label>
-                    <input type="text" name="" id="" formControlName="city" class="form-control">
-                 </div>
-                 <div class="form-group">
-                  <label for="phone">Phone Number</label>
-                  <input type="int" name="" id="" formControlName="phoneNumber" class="form-control">
-                </div>
-                <div class="form-group">
-                   <label for="phone">Course's Name</label>
-                   <input type="text" name="" id="" formControlName="courseName" class="form-control">
-                  </div>
-                <div class="form-group">
-                   <label for="phone">Price</label>
-                   <input type="number" name="" id="" formControlName="price" class="form-control" aria-label="Amount (to the nearest dollar)">
-                  </div>
-                <div class="form-group">
-                   <label for="phone">Picture</label>
-                   <input type="file" name="" id="" formControlName="picture" class="form-control" (change)="fnChange({event : $event})"><br>
-                </div>
-                <div class="form-group">
-                  <label for ="category">Category</label>
-                  <select class="form-control"  name="category" formControlName="category" style="width:245px;height:39px;border-radius: 20px;" >
-                    <option value=""></option>
-                    <option value="Mathématique" >Mathématique</option>
-                    <option value="Spanish">Spanish</option>
-                    <option value="Anglais">Anglais</option>
-                    <option value="Français">Français</option>
-                    <option value="Informatique">Informatique</option>
-                    <option value="Physique">Physique</option>
-                    <option value="Sport">Sport</option>
-                    <option value="Dance">Dance</option>
-                </select >                     
+-->
 
-                </div>
-                <div class="form-group">
-                  <label for="description">Description</label>
-                  <input type="text" name="" id="" formControlName="description" class="form-control">
+<nav class="menu" tabindex="0" style="padding-top: 60px;">
+	<div class="smartphone-menu-trigger"></div>
+  <header class="avatar">
+		<img  srcset="data:image/png;base64,{{picture}}" />
+    <h2>{{formerAuthService.loggedUser}}</h2>
+  </header>
+	<ul>
+    <li tabindex="0" class="icon-messages"><span style="font-size: medium; color: #261d51; font-weight: bold; padding-left: 10px;">Messages</span></li>
+    <hr>
+    <li tabindex="0" class="icon-calendar"><span style="font-size: medium; color: #261d51; font-weight:bold;padding-left: 10px;" routerLink="planning-former">Events</span></li>
+    <hr>
+    <li tabindex="0" class="icon-suggestions"><span style="font-size: medium; color: #261d51;font-weight:bold;padding-left: 10px;">Suggestions</span></li>
+    <hr>
+    <li tabindex="0" class="icon-add" data-toggle="modal" data-target="#example2Modal" ><span style="font-size: medium; color: #261d51;font-weight:bold;padding-left: 10px;">Post add</span></li>
+  </ul>
 
-
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-info" data-dismiss="modal" style="margin-right: 30px;
-             background-image: linear-gradient(to right, rgba(255,255,255,0.5), rgba(255,255,255,0.2) 20%, rgba(0,0,0,0.15) 51%, rgba(0,0,0,0.05));
-    background-repeat: repeat-x;
-  border-radius:20px;">Close</button>
-         
-       <input type="button" value="Add" class="btn btn-success" (click)="fnAdd()" style="background-image: linear-gradient(to right, rgba(255,255,255,0.5), rgba(255,255,255,0.2) 20%, rgba(0,0,0,0.15) 51%, rgba(0,0,0,0.05));
-          background-repeat: repeat-x;
-        border-radius:20px;">
-                </div>
-             </form>
-          </div>
-       </div>
+</nav>
+<div class="container" style="padding-top: 80px;">
+  <div class="card">
+    <div class="card__header">
+      <img src="https://source.unsplash.com/600x400/?computer" alt="card__image" class="card__image" width="600">
     </div>
- </div>-->
-
-
+    <div class="card__body">
+        <div class="text-align">
+      <span class="tag tag-blue">Job title</span>
+      <span class="tag tag-red">experience</span>
+      <span class="tag tag-brown">700dt</span>
+    </div>
+      <h4>Center name</h4>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi perferendis molestiae non nemo doloribus. Doloremque, nihil! At ea atque quidem!</p>
+    </div>
+    <div class="card__footer " style="align-items: center;align-self: center;display: flex;">
+        <span class="tag tag-green " style="cursor: pointer;">Apply NOW</span> 
+         </div>
+  </div>
   
+</div>
+
+
+<div class="modal fade m-auto shadow-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered " role="document" style="margin: auto; ">
+    <div class="modal-content" style="padding-top: 15px;">
+      <div class="modal-header " style="align-items: center; align-self: center; display: flex;">
+          <h2 class="modal-title " id="modal-basic-title" >Upload Courses</h2>
+         </div>
+         <div class="alert alert-success" *ngIf='message==1'   >You have successfully added</div>
+        
+        <form [formGroup]="courseForm">
+         
+        <div class="modal-body" >
+          <div class="form-group">
+            <label    for="name" ><strong>Full Name</strong></label>
+            <input type="text" name="" id="" formControlName="formerName" class="form-control" >
+           
+           </div>
+              <div class="form-group" >
+                <label for="email"><strong>Email</strong></label>
+                <input type="email" ngModel="{{formerEmail}}"  name="" class="form-control" id="" formControlName="formerEmail" >
+             </div>
+             <div class="form-group"  >
+              <label for="phone" ><strong>City</strong></label>
+              <input type="text" name="" id="" formControlName="city" class="form-control">
+           </div>
+           <div class="form-group"  >
+            <label for="phone" ><strong>Phone Number</strong></label>
+            <input type="int" ngModel="{{formerPhoneNumber}}" name="" id="" formControlName="phoneNumber" class="form-control">
+          </div>
+          <div class="form-group"  >
+            <label for="phone" ><strong>Course's Name</strong></label>
+            <input type="text" name="" id="" formControlName="courseName" class="form-control">
+           </div>
+           <div class="form-group"  >
+            <label for="phone" ><strong>Price</strong></label>
+            <input type="number" name="" id="" formControlName="price" class="form-control" aria-label="Amount (to the nearest dollar)">
+           </div>
+              <div class="form-group" >
+                <label for="phone" ><strong>Picture</strong></label>
+                <input type="file" name="" id="" formControlName="picture" class="form-control" (change)="fnChange({event : $event})">
+             </div>
+             <div class="form-group" >
+              <label for ="category" ><strong>Category</strong></label>
+              <select class="form-control"  name="category" formControlName="category" style="width:457px;height:39px;border-radius: 20px;" >
+                <option value=""></option>
+                <option value="Mathématique" >Maths</option>
+                <option value="Physics">Physics</option>
+                <option value="Languages">Languages</option>
+                <option value="Computer Sciencee">Computer Science</option>
+                <option value="Dance">Dance</option>
+                <option value="Music">Music</option>
+                <option value="Sports">Sports</option>
+                <option value="Chemistry">Chemistry</option>
+            </select >                     
+
+            </div>
+                
+                <div class="form-group"  style="padding-top: 5px;">                
+                  <label for="description" style="padding-bottom: 5px;"><strong>Description</strong></label>         
+                  <input type="text" name="" id="" formControlName="description" class="form-control">              
+                </div>
+             
+              </div>
+        
+      <div class="modal-footer" style="padding-top: 15px; align-self: center; align-items: center;
+        display: flex; padding-bottom: 5px;">
+          <input type="button" class="btn btn-info" data-dismiss="modal" value=" Close" style="border-radius: 20px;" >
+      
+       <input type="button" value="Add " class="btn btn-success" (click)="fnAdd()  " style="border-radius: 20px;">
+     
+           </div>
+        
+          </form>
+    </div>
+  </div>
+</div>
+
+
+<!-------------------->
+
+<div class="modal fade m-auto shadow-lg" id="example2Modal" tabindex="-1" role="dialog" aria-labelledby="example2ModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered " role="document" style="margin: auto; ">
+    <div class="modal-content" style="padding-top: 15px;">
+      <div class="modal-header " style="align-items: center; align-self: center; display: flex;">
+          <h1 class="modal-title " id="modal-basic-title" style="font-family: cursive; opacity: 80%;" >Upload Courses</h1>
+         </div>
+        
+         
+        <div class="modal-body" style="margin: 20px;" >
+          <div class="alert alert-success" *ngIf='message==1'   >You have successfully added</div>
+
+          <form class="form-card"   [formGroup]="courseForm">
+            <div class="row justify-content-between text-left">
+              <div class="form-group col-sm-6 flex-column d-flex" style="padding-top: 5px;"> 
+                <label class="form-control-label px-3">Full Name<span class="text-danger"> *</span></label> 
+                <input type="text" name="" id="" formControlName="formerName" class="form-control">             
+              </div>
+              <div class="form-group col-sm-6 flex-column d-flex"> 
+                <label class="form-control-label px-3">Email<span class="text-danger"> *</span></label> 
+                <input type="email" name="" id="" ngModel="{{formerEmail}}"  formControlName="formerEmail" class="form-control">             
+              </div>
+          </div>
+            <div class="row justify-content-between text-left">
+                <div class="form-group col-sm-6 flex-column d-flex" style="padding-top: 5px;"> 
+                  <label class="form-control-label px-3">City<span class="text-danger"> *</span></label> 
+                  <input type="text" name="" id="" formControlName="city" class="form-control">             
+                </div>
+                <div class="form-group col-sm-6 flex-column d-flex"> 
+                  <label class="form-control-label px-3">Phone Number<span class="text-danger"> *</span></label> 
+                  <input type="number" name="" id="" ngModel="{{formerPhoneNumber}}" formControlName="phoneNumber" class="form-control">             
+                </div>
+            </div>
+            <div class="row justify-content-between text-left">
+                <div class="form-group col-sm-6 flex-column d-flex" > 
+                  <label class="form-control-label px-3">Course's Name<span class="text-danger"> *</span></label> 
+                  <input type="text" name="" id="" formControlName="courseName" class="form-control">             
+                </div>
+                <div class="form-group col-sm-6 flex-column d-flex"> 
+                  <label class="form-control-label px-3">price<span class="text-danger"> *</span></label> 
+                  <input type="number" name="" id="" formControlName="price" class="form-control">             
+                </div>
+            </div>
+            
+            <div class="row justify-content-between text-left">
+              <div class="form-group col-sm-6 flex-column d-flex" > 
+                <label class="form-control-label px-3">Picture<span class="text-danger"> *</span></label> 
+                <input type="file" name="" id="" formControlName="picture" class="form-control" (change)="fnChange({event : $event})">
+             </div>
+              <div class="form-group col-sm-6 flex-column d-flex"> 
+                <label for ="category"class="form-control-label px-3" >Category<span class="text-danger"> *</span></label>
+
+                <select class="form-control"  name="category" formControlName="category"  style="border-radius: 20px; border-color: darkgray;" >
+                  <option value=""></option>
+                  <option value="Mathématique" >Maths</option>
+                  <option value="Physics">Physics</option>
+                  <option value="Languages">Languages</option>
+                  <option value="Computer Sciencee">Computer Science</option>
+                  <option value="Dance">Dance</option>
+                  <option value="Music">Music</option>
+                  <option value="Sports">Sports</option>
+                  <option value="Chemistry">Chemistry</option>
+              </select >           
+              </div>
+          </div>
+          
+        <label class="form-control-label px-3">Description<span class="text-danger"> *</span></label>
+          <textarea name="" id="" class="form-control" style="height: 108px; border-radius: 20px;"></textarea>
+        </form>
+              </div>
+        
+              <div class="modal-footer" style="padding-top: 15px; align-self: center; align-items: center;
+              display: flex; padding-bottom: 5px;">
+                <input type="button" class="btn btn-info" data-dismiss="modal" value=" Close" style="border-radius: 20px;" >
+            
+             <input type="button" value="Add " class="btn btn-success" (click)="fnAdd()  " style="border-radius: 20px;">
+           
+                 </div>
+          
+    </div>
+  </div>
+</div>
+
+

@@ -8,11 +8,11 @@ export class Center {
     userPassword!: string;
     userEmail!: string;
     userAddress!: string;
-    userTelephoneNumber!: number;
+    userTelephoneNumber!: string;
     userPostalCode!: number;
     userCity!: string; 
     userCountry!: string;
-    userDescription!:String;
+    userDescription!:string;
 
     roles!:Role[];
     constructor(){}

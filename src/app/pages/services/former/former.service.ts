@@ -27,12 +27,14 @@ export class FormerService {
     });
   }
   getUsersByRole(roleName:String){
-    return this.httpclient.get(`${this.PATH_OF_API}/roles/${roleName}`);
-
+    return this.httpclient.get(`${this.PATH_OF_API}/roles/${roleName}`, {
+      headers: this.requestHeader,
+    });
   }
   getUsersByEmail(userEmail:String){
-    return this.httpclient.get(`${this.PATH_OF_API}/userEmail/${userEmail}`);
-
+    return this.httpclient.get(`${this.PATH_OF_API}/userEmail/${userEmail}`, {
+      headers: this.requestHeader,
+    });
   }
   getCountFormer(roleName:String)
         {

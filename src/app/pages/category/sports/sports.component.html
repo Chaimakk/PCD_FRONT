@@ -1,7 +1,7 @@
 <section class="course" style="padding-top: 80px;">
   
   <div class="container">
-    <h1 class="text-center"><strong>All Courses</strong></h1>
+    <h1 class="text-center"><strong>Sports Courses</strong></h1>
       
       <div class="row mt-5" >
           <div class="col-lg-4 mb-5" *ngFor="let c of courses">
@@ -13,7 +13,7 @@
       </div>
       <header>
         <div class="avatar">
-          <img srcset="data:image/png;base64,{{c.picture}}"  style="cursor:pointer;" routerLink="afficheprofile" />
+          <img srcset="data:image/png;base64,{{c.picture}}"  style="cursor:pointer;" (click)="clicklink(c.formerEmail,c.courseName)" />
         </div>
       </header>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">

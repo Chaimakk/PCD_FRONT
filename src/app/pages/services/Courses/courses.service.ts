@@ -32,8 +32,19 @@ export class CoursesService {
       headers: this.requestHeader,
     });
   }
+  getFirst5ByIsFavorite(isFavorite:Boolean)
+  {
+    return this.http.get(`${this.PATH_OF_API}/first5Favorite/${isFavorite}`, {
+      headers: this.requestHeader,
+    });
+  }
   getCourseByEmail(formerEmail: String){
     return this.http.get(`${this.PATH_OF_API}/email/${formerEmail}`,{
+      headers: this.requestHeader,
+    });
+  }
+  findByFormerANDCourseName(CourseName: String, formerEmail:String){
+    return this.http.get(`${this.PATH_OF_API}/CourseName/${CourseName}/${formerEmail}`,{
       headers: this.requestHeader,
     });
   }

@@ -52,6 +52,7 @@ import { SportsComponent } from './pages/category/sports/sports.component';
 import { HomeStudentComponent } from './pages/home-student/home-student.component';
 import { AfficheProfileComponent } from './pages/affiche-profile/affiche-profile.component';
 import { FavoritesStudentComponent } from './pages/favorites-student/favorites-student.component';
+import { CityComponent } from './pages/city/city.component';
 
 
 const routes: Routes = [{path:"",component:HomeComponent   },
@@ -83,6 +84,9 @@ const routes: Routes = [{path:"",component:HomeComponent   },
 
 { path: 'home-center', component: HomeCenterComponent ,  canActivate:[AuthGuard], data:{roles:['Center']} },
 { path: 'home-student', component: HomeStudentComponent ,  canActivate:[AuthGuard], data:{roles:['Student']} },
+{ path: 'favoriteStudent', component: FavoritesStudentComponent,  canActivate:[AuthGuard], data:{roles:['Student']} },
+{ path: 'home-student/favoriteStudent', component: FavoritesStudentComponent,  canActivate:[AuthGuard], data:{roles:['Student']} },
+
 
 {path: "forbidden", component: ForbiddenComponent},
 {path: "login", component: LoginComponent},
@@ -123,6 +127,12 @@ const routes: Routes = [{path:"",component:HomeComponent   },
 {path:"music", component:MusicComponent},
 
 {path:"afficheprofile", component:AfficheProfileComponent},
+{path:"afficheprofile/:formerEmail/:courseName", component:AfficheProfileComponent},
+{path:"coursecity/:city",component:CityComponent},
+
+
+
+
 {path:"home/afficheprofile", component:AfficheProfileComponent},
 {path:"courses/chemistry/afficheprofile", component:AfficheProfileComponent},
 
@@ -131,7 +141,6 @@ const routes: Routes = [{path:"",component:HomeComponent   },
 { path: 'admin/allformertable', component: AllformertableComponent},
 { path: 'admin/allcentertable', component: AllcentertableComponent},
 { path: 'admin/alladmintable', component: AlladmintableComponent},
-{ path: 'favoriteStudent', component: FavoritesStudentComponent},
 
 ];
 

@@ -84,6 +84,7 @@ import { SportsComponent } from './pages/category/sports/sports.component';
 import { ChemistryComponent } from './pages/category/chemistry/chemistry.component';
 import { HomeStudentComponent } from './pages/home-student/home-student.component';
 import { AfficheProfileComponent } from './pages/affiche-profile/affiche-profile.component';
+import { CityComponent } from './pages/city/city.component';
 
 @NgModule({
   declarations: [
@@ -141,6 +142,7 @@ import { AfficheProfileComponent } from './pages/affiche-profile/affiche-profile
          ChemistryComponent,
     HomeStudentComponent,
     AfficheProfileComponent,
+    CityComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,3 +1,5 @@
+import { Router } from '@angular/router';
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit ,ViewChild, OnDestroy, SimpleChanges } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 
@@ -41,13 +43,13 @@ export class HomeStudentComponent implements OnInit {
   readonly = false;
   public tableData1!: TableData;
   public tableData2!: TableData1;
-  
+  city!:String;
   foodForm:any;
   // @ts-ignore
   message=0;
   addForm:any;
   file!: File;
-  constructor(config: NgbCarouselConfig,public coursesservice :CoursesService, public studentAuthService: StudentAuthService,public formerAuthService:FormerAuthService,public formerService:FormerService,private fb:FormBuilder, private courseservice:CoursesService) {
+  constructor(config: NgbCarouselConfig,public coursesservice :CoursesService, public studentAuthService: StudentAuthService,public formerAuthService:FormerAuthService,public formerService:FormerService,private fb:FormBuilder, private courseservice:CoursesService,private route:Router) {
     config.showNavigationArrows = true;
       config.showNavigationIndicators = true;
       this.foodForm=this.fb.group({
@@ -65,11 +67,16 @@ export class HomeStudentComponent implements OnInit {
      }
   
      courses:any;
+     coursesf:any;
+     isFavorite=true;
   ngOnInit(): void {
 
     let loggedCity: string;
     loggedCity=localStorage.getItem('loggedCity')!;
     this.coursesservice.getCourseByCity(loggedCity).subscribe((data: any)=>this.courses=data);
+ 
+  this.coursesservice.getFirst5ByIsFavorite(this.isFavorite).subscribe((data: any)=>this.coursesf=data);
+
     this.tableData2={ gouvernorat: [ 'Ariana', 'Bèja', 'BenArous', 'Bizerte', 'Gabès',
     'Gafsa', 'Jendouba', 'Kairouan', 'Kasserine', 'Kébili',
     'Le Kef', 'Mahdia', 'La Manouba', 'Médenine', 'Monastir',
@@ -138,5 +145,25 @@ export class HomeStudentComponent implements OnInit {
   }
   public isLoggedInF() {
     return this.formerAuthService.isLoggedInF();
+  }
+  /*****************************/
+  public favorite(id:number){
+    this.coursesservice.putFavorite(id).subscribe(
+      (response: any) => {
+        console.log(id );
+       
+      },
+      (error: HttpErrorResponse) => {
+        console.log(error.message);
+      }
+    );
+  }
+  /***************************/
+  public clicklink(city:String){
+    this.city=city;
+    
+    this. route. navigate([`/coursecity/${city}`]);
+  
+  
   }
 }

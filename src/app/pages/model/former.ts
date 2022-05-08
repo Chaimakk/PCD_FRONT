@@ -8,8 +8,8 @@ export class Former {
     userAddress!: string;
      userBirthday!: string;
      userGender!: string;
-     userTelephoneNumber!: number;
-     userPostalCode!: number;
+     userTelephoneNumber!: string;
+     userPostalCode!: string;
      userCity!: string; 
      userCountry!: string;
      userLevel!:string;

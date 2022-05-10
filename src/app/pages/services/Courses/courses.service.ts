@@ -54,6 +54,18 @@ export class CoursesService {
       headers: this.requestHeader,
     });
   }
+  insert(id: number,user:string,isFavorite:Boolean){
+ 
+    return this.http.post(`${this.PATH_OF_API}/insert/${id}/${user}/${isFavorite}`,{
+      headers: this.requestHeader,
+    });
+  }
+  putFavoritee(id: number,user:string){
+ 
+    return this.http.put(`${this.PATH_OF_API}/Favorite/${id}/${user}`,{
+      headers: this.requestHeader,
+    });
+  }
   getCourseByCity(city: String){
     return this.http.get(`${this.PATH_OF_API}/city/${city}`,{
       headers: this.requestHeader,

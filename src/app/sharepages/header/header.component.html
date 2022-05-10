@@ -59,7 +59,7 @@
           <a  *ngIf="userService.roleMatch(['Student'])"class="nav-link" routerLink="courses">Student</a>
         </li>-->
         <li class="nav-item">
-          <a class="nav-link" *ngIf="! isLoggedIn()" routerLink="courses" style="font-weight: bold;font-size: 1.2em;">Courses</a>
+          <a class="nav-link" *ngIf="! isLoggedIn()" routerLink="center-former" style="font-weight: bold;font-size: 1.2em;">Courses</a>
         </li>
         
         <li class="nav-item " >
@@ -86,6 +86,14 @@
           <button mat-icon-button  *ngIf="studentService.roleMatch(['Student'])&&isLoggedIn()" class="nav-link b   " routerLink="favoriteStudent" aria-label="Example icon button with a heart icon">
             <mat-icon style="color: #261d51;">favorite</mat-icon>
           </button>
+          
+        </li>
+        <li class="nav-item ">
+          
+          <button mat-icon-button  *ngIf="studentService.roleMatch(['Student'])&&isLoggedIn()" class="nav-link b   " routerLink="image" aria-label="Example icon button with a heart icon">
+            <mat-icon style="color: #261d51;">Image</mat-icon>
+          </button>
+          
         </li>
         <li class="nav-item ">
           
@@ -130,7 +138,7 @@
         </li>
         <li class="nav-item">
          
-          <button mat-icon-button  class="nav-link" routerLink="courses"  *ngIf=" isLoggedIn()" aria-label="Example icon button with a plus one icon">
+          <button mat-icon-button  class="nav-link" routerLink="center-former"  *ngIf=" isLoggedIn()" aria-label="Example icon button with a plus one icon">
             <mat-icon matTooltip="Courses" style="color: #261d51;">book</mat-icon>
           </button>
         </li>

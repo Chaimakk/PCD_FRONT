@@ -41,6 +41,10 @@ export class StudentService {
           return this.httpclient.get(`${this.PATH_OF_API}/userEmail/${userEmail}`);
       
         }
+        getUserByCourse(courseId:number){
+          return this.httpclient.get(`${this.PATH_OF_API}/UserByCourses/${courseId}`);
+      
+        }
         getCountStudent(roleName:String)
         {
           return this.httpclient.get(`${this.PATH_OF_API}/users/count/${roleName}`, {

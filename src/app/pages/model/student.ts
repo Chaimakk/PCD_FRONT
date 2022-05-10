@@ -1,3 +1,4 @@
+import { Byte } from "@angular/compiler/src/util";
 import { Role } from "./role";
 
 export class Student {
@@ -12,6 +13,7 @@ export class Student {
      userPostalCode!: number;
      userCity!: string; 
      userCountry!: string;
+
 
     roles!:Role[];
    

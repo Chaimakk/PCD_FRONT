@@ -1,3 +1,6 @@
+import { CenterCoursesComponent } from './pages/center-courses/center-courses.component';
+import { CenterCategoryComponent } from './pages/center-category/center-category.component';
+import { CenterFormerComponent } from './pages/center-former/center-former.component';
 
 import { MusicComponent } from './pages/category/music/music.component';
 import { MessagesComponent } from './pages/messages/messages.component';
@@ -53,6 +56,7 @@ import { HomeStudentComponent } from './pages/home-student/home-student.componen
 import { AfficheProfileComponent } from './pages/affiche-profile/affiche-profile.component';
 import { FavoritesStudentComponent } from './pages/favorites-student/favorites-student.component';
 import { CityComponent } from './pages/city/city.component';
+import { TeamsComponent } from './pages/teams/teams.component';
 
 
 const routes: Routes = [{path:"",component:HomeComponent   },
@@ -62,6 +66,7 @@ const routes: Routes = [{path:"",component:HomeComponent   },
 {path:"register",component:RegisterComponent   },
 {path:"contact",component:ContactComponent  },
 {path:"courses",component:CoursesComponent  },
+{path:"center-former",component:CenterFormerComponent  },
 {path:"home/courses",component:CoursesComponent},
 {path:"home/register",component:RegisterComponent},
 {path:"thirdof",component:ThirdofComponent},
@@ -87,7 +92,11 @@ const routes: Routes = [{path:"",component:HomeComponent   },
 { path: 'favoriteStudent', component: FavoritesStudentComponent,  canActivate:[AuthGuard], data:{roles:['Student']} },
 { path: 'home-student/favoriteStudent', component: FavoritesStudentComponent,  canActivate:[AuthGuard], data:{roles:['Student']} },
 
-
+{path: "center-former/center-category/center-courses/:category", component: CenterCoursesComponent},
+{path: "center-former/center-category/center-courses", component: CenterCoursesComponent},
+{path: "center-category", component: CenterCategoryComponent},
+{path: "center-former/center-category", component: CenterCategoryComponent},
+{path: "center-former/courses", component: CoursesComponent},
 {path: "forbidden", component: ForbiddenComponent},
 {path: "login", component: LoginComponent},
 { path: 'admin', component: AdminComponent ,  canActivate:[AuthGuard], data:{roles:['Admin']} },
@@ -105,25 +114,26 @@ const routes: Routes = [{path:"",component:HomeComponent   },
 
 {path:"former-chat", component:FormerChatComponent,  canActivate:[AuthGuard], data:{roles:['Former']} },
 {path:"mycourses", component:MycoursesComponent,  canActivate:[AuthGuard], data:{roles:['Former']} },
-
+{ path: 'teams', component: TeamsComponent},
+{ path: 'home-center/teams', component: TeamsComponent},
 { path: 'informatique', component: InformatiqueComponent},
-{path:"courses/informatique", component:InformatiqueComponent},
+{path:"center-former/courses/informatique", component:InformatiqueComponent},
 { path: 'mathematique', component: MathematiqueComponent},
-{ path: 'courses/mathematique', component: MathematiqueComponent},
-{path:"courses/chemistry", component:ChemistryComponent},
+{ path: 'center-former/courses/mathematique', component: MathematiqueComponent},
+{path:"center-former/courses/chemistry", component:ChemistryComponent},
 {path:"chemistry", component:ChemistryComponent},
-{path:"courses/dance", component:DanceComponent},
+{path:"center-former/courses/dance", component:DanceComponent},
 {path:"dance", component:DanceComponent},
-{path:"courses/language", component:LanguageComponent},
+{path:"center-former/courses/language", component:LanguageComponent},
 
 {path:"language", component:LanguageComponent},
-{path:"courses/language", component:LanguageComponent},
+{path:"center-former/courses/language", component:LanguageComponent},
 {path:"physiques", component:PhysiquesComponent},
 {path:"sports", component:SportsComponent},
 
-{path:"courses/physiques", component:PhysiquesComponent},
-{path:"courses/sports", component:SportsComponent},
-{path:"courses/music", component:MusicComponent},
+{path:"center-former/courses/physiques", component:PhysiquesComponent},
+{path:"center-former/courses/sports", component:SportsComponent},
+{path:"center-former/courses/music", component:MusicComponent},
 {path:"music", component:MusicComponent},
 
 {path:"afficheprofile", component:AfficheProfileComponent},

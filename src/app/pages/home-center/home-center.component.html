@@ -7,7 +7,7 @@
   </header>
 	<ul>
     <li tabindex="0" class="icon-messages"><span style="font-size: medium; color: #261d51; font-weight: bold;padding-left: 10px;">Messages</span></li>
-    <li tabindex="0" class="icon-teams"><span style="font-size: medium; color: #261d51;font-weight:bold;padding-left: 10px;">Teams</span></li>
+    <li tabindex="0" class="icon-teams"><span style="font-size: medium; color: #261d51;font-weight:bold;padding-left: 10px;" routerLink="teams">Teams</span></li>
     <li tabindex="0" class="icon-prof" ><span style="font-size: medium; color: #261d51;font-weight:bold;padding-left: 10px;">Prof</span></li>
     <li tabindex="0" class="icon-add" data-toggle="modal" data-target="#exampleModal" ><span style="font-size: medium; color: #261d51;font-weight:bold;padding-left: 10px;">Post add</span></li>
     <li tabindex="0" class="icon-add" data-toggle="modal" data-target="#example2Modal" ><span style="font-size: medium; color: #261d51;font-weight:bold;padding-left: 10px;">Post announcement</span></li>
@@ -16,178 +16,315 @@
 
 </nav>
 
-<main style="background-color: #fafafa;margin-left: 243px; padding-top: 20px;">
-  <div class="modal fade m-auto shadow-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered " role="document" style="margin: auto; ">
-      <div class="modal-content" style="padding-top: 15px;">
-        <div class="modal-header " style="align-items: center; align-self: center; display: flex;" >
-            <h1 class="modal-title " id="modal-basic-title" style="font-family: cursive; opacity: 80%;" >Upload Courses</h1>
 
-           </div>
-          
-           
-          <div class="modal-body" style="margin: 20px;" >
-            <div class="alert alert-success" *ngIf='message==1'   >You have successfully added</div>
 
-            <form   [formGroup]="courseForm">
-              <div class="row justify-content-between text-left">
-                  <div class="form-group col-sm-6 flex-column d-flex" style="padding-top: 5px;"> 
-                    <label class="form-control-label px-3">Former name<span class="text-danger"> *</span></label>
-                    <input type="text" name="" id="" formControlName="formerName" class="form-control">
+<main >
+  
+  <div class="container mt-7" style="padding-top: 160px; margin-left: 310px;margin-right:auto; ">
+    <!-- Table -->
+    <div class="row">
+  
+      <div class="col" >
+        <div class="card shadow">
+          <div class="card-header border-0">
+            <h3 class="mb-0">All courses</h3>
+          </div>
+          <div class="table-responsive">
+            <table class="table align-items-center table-flush">
+              <thead class="thead-light">
+                <tr>
+                  <th scope="col">Course</th>
+                  <th scope="col">Date</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Place</th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let f of courses">
+                  <th scope="row">
+                    <div class="media align-items-center"  >
+                      <img  class="globalRoundProfile" srcset="data:image/png;base64,{{f.picture}}" />
+
+                    
+                      <div class="media-body">
+                        <span class="mb-0 text-sm">&nbsp; {{f.courseName}}</span>
+                      </div>
                     </div>
-                  <div class="form-group col-sm-6 flex-column d-flex"> 
-                    <label class="form-control-label px-3">Center name<span class="text-danger"> *</span></label> 
-                    <input type="text" name="" id="" formControlName="centereName" class="form-control">                  </div>
-              </div>
-              <div class="row justify-content-between text-left">
-                  <div class="form-group col-sm-6 flex-column d-flex" > 
-                    <label class="form-control-label px-3">Center email<span class="text-danger"> *</span></label> 
-                    <input type="email" name="" id="" ngModel="{{centerAuthService.loggedEmail}}" formControlName="centerEmail" class="form-control">                  
-              </div>
-                  <div class="form-group col-sm-6 flex-column d-flex"> 
-                    <label class="form-control-label px-3">Phone number<span class="text-danger"> *</span></label> 
-                    <input type="number" name="" id="" ngModel="{{centerAuthService.loggedTelephoneNumber}}" formControlName="phoneNumber" class="form-control">                   </div>
-              </div>
-              
-              <div class="row justify-content-between text-left">
-                <div class="form-group col-sm-6 flex-column d-flex" >
-                   <label class="form-control-label px-3">City<span class="text-danger"> *</span></label>
-                   <input type="text" name="" id="" formControlName="city" class="form-control">  
-               </div>
-                <div class="form-group col-sm-6 flex-column d-flex"> 
-                  <label class="form-control-label px-3">Price<span class="text-danger"> *</span></label>  
-                  <input type="number" name="" id="" formControlName="price" class="form-control">                </div>
-            </div>
-            <div class="row justify-content-between text-left">
-              <div class="form-group col-sm-6 flex-column d-flex"> 
-                <label class="form-control-label px-3">Course name<span class="text-danger"> *</span></label> 
-                <input type="text" name="" id="" formControlName="courseName" class="form-control">             
-               </div>
-               <div class="form-group col-sm-6 flex-column d-flex"> 
-                <label for ="category"class="form-control-label px-3" >Category<span class="text-danger"> *</span></label>
-
-                <select class="form-control"  name="category" formControlName="category"  style="border-radius: 20px; border-color: darkgray;" >
-                  <option value=""></option>
-                  <option value="Mathématique" >Maths</option>
-                  <option value="Physics">Physics</option>
-                  <option value="Languages">Languages</option>
-                  <option value="Computer Sciencee">Computer Science</option>
-                  <option value="Dance">Dance</option>
-                  <option value="Music">Music</option>
-                  <option value="Sports">Sports</option>
-                  <option value="Chemistry">Chemistry</option>
-              </select >    
-
-               </div>
+                  </th>
+                  <td>
+                    {{f.date}}
+                  </td>
+                  <td>
+                    <span class="badge badge-dot mr-4">
+                      <i class="bg-success"></i><span style="color:#000 ;">confirmed</span>
+                    </span>
+                  </td>
+                  <td>
+                    
+                    <span style="color:#000 ;">{{f.address}}</span>
+                  
+                </td>
+                  
+                  <td class="text-right">
+                    <div class="dropdown">
+                     <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                        <a class="dropdown-item" href="#">The learner present</a>
+                        <a class="dropdown-item" href="#">The learner absent</a>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                
+              </tbody>
+            </table>
           </div>
-          
-          <label for ="category"class="form-control-label px-3" >Description<span class="text-danger"> *</span></label>
-
-          <textarea name="" id="" class="form-control" style="height: 108px; border-radius: 20px;"></textarea>
-  
-          </form>
-                </div>
-          
-          <div class="modal-footer" style="padding-top: 15px; align-self: center; align-items: center;
-          display: flex; padding-bottom: 5px;">
-          <div class="row justify-content-end">
-            <button type="submit" data-dismiss="modal" class="btn-block btn-info"style="border-radius: 20px;">close</button> 
+          <div class="card-footer py-4">
+            <nav aria-label="...">
+              <ul class="pagination justify-content-end mb-0">
+                <li class="page-item disabled">
+                  <a class="page-link" href="#" tabindex="-1">
+                    <i class="fas fa-angle-left"></i>
+                    <span class="sr-only">Previous</span>
+                  </a>
+                </li>
+                <li class="page-item active">
+                  <a class="page-link" href="#">1</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                  <a class="page-link" href="#">
+                    <i class="fas fa-angle-right"></i>
+                    <span class="sr-only">Next</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
         </div>
-          <div class="row justify-content-end">
-             <button type="submit" class="btn-block btn-success" style="border-radius: 20px;"  (click)="fnAdd()  " >Add</button> 
-        </div>
-        
-            
-         
-          
-             </div>
-            
       </div>
     </div>
+    
+   
   </div>
-  <div class="modal fade m-auto shadow-lg" id="example2Modal" tabindex="-1" role="dialog" aria-labelledby="example2ModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered " role="document" style="margin: auto; ">
-      <div class="modal-content" style="padding-top: 15px;">
-        <div class="modal-header " style="align-items: center; align-self: center; display: flex;">
-            <h1 class="modal-title " id="modal-basic-title" style="font-family: cursive; opacity: 80%;" >Add announcement</h1>
-           </div>
-          
-           
-          <div class="modal-body" style="margin: 20px;" >
-            
-            <form class="form-card" >
-              <div class="row justify-content-between text-left">
-                <div class="form-group col-sm-6 flex-column d-flex" style="padding-top: 5px;"> 
-                  <label class="form-control-label px-3">Center name<span class="text-danger"> *</span></label> 
-                  <input type="text" name="" id="" formControlName="centerName" class="form-control">             
-                </div>
-                <div class="form-group col-sm-6 flex-column d-flex"> 
-                  <label class="form-control-label px-3">Center email<span class="text-danger"> *</span></label> 
-                  <input type="email" name="" id="" formControlName="centerEmail" class="form-control">             
-                </div>
-            </div>
-              <div class="row justify-content-between text-left">
-                  <div class="form-group col-sm-6 flex-column d-flex" style="padding-top: 5px;"> 
-                    <label class="form-control-label px-3">Number phone<span class="text-danger"> *</span></label> 
-                    <input type="number" name="" id="" formControlName="phoneNumber" class="form-control">             
-                  </div>
-                  <div class="form-group col-sm-6 flex-column d-flex"> 
-                    <label class="form-control-label px-3">Job title<span class="text-danger"> *</span></label> 
-                    <input type="text" name="" id="" formControlName="jobTitle" class="form-control">             
-                  </div>
-              </div>
-              <div class="row justify-content-between text-left">
-                  <div class="form-group col-sm-6 flex-column d-flex" > 
-                    <label class="form-control-label px-3">Domain<span class="text-danger"> *</span></label> 
-                    <input type="text" name="" id="" formControlName="domain" class="form-control">             
-                  </div>
-                  <div class="form-group col-sm-6 flex-column d-flex"> 
-                    <label class="form-control-label px-3">Work place<span class="text-danger"> *</span></label> 
-                    <input type="text" name="" id="" formControlName="workPlace" class="form-control">             
-                  </div>
-              </div>
-              
-              <div class="row justify-content-between text-left">
-                <div class="form-group col-sm-6 flex-column d-flex" > 
-                  <label class="form-control-label px-3">Required Languages<span class="text-danger"> *</span></label> 
-                  <input type="text" name="" id="" formControlName="courseName" class="form-control">             
-                </div>
-                <div class="form-group col-sm-6 flex-column d-flex"> 
-                  <label class="form-control-label px-3">Experience<span class="text-danger"> *</span></label> 
-                  <input type="text" name="" id="" formControlName="experience" class="form-control">             
-                </div>
-            </div>
-            <div class="row justify-content-between text-left">
-              <div class="form-group col-sm-6 flex-column d-flex"> 
-                <label class="form-control-label px-3">Salary<span class="text-danger"> *</span></label>
-                <input type="text" name="" id="" formControlName="salary" class="form-control">             
-                </div>
-          </div>
-          <label class="form-control-label px-3">Description<span class="text-danger"> *</span></label>
-            <textarea name="" id="" class="form-control" style="height: 108px; border-radius: 20px;"></textarea>
-          </form>
-                </div>
-          
-          <div class="modal-footer" style="padding-top: 15px; align-self: center; align-items: center;
-          display: flex; padding-bottom: 5px;">
-           <div class="row justify-content-end">
-            <button type="submit" data-dismiss="modal" class="btn-block btn-info"style="border-radius: 20px;">close</button> 
-        </div>
-          <div class="row justify-content-end">
-             <button type="submit" class="btn-block btn-success" style="border-radius: 20px;">Add</button> 
-        </div>
-       
-            
-         
-          
-             </div>
-            
-      </div>
-    </div>
-  </div>
-  
-  
-
-  
 </main>
 
+
+
+
+
+
+
+
+
+
+
+
+<div class="modal fade m-auto shadow-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered " role="document" style="margin: auto; ">
+    <div class="modal-content" style="padding-top: 15px;">
+      <div class="modal-header " style="align-items: center; align-self: center; display: flex;" >
+          <h1 class="modal-title " id="modal-basic-title" style="font-family: cursive; opacity: 80%;" >Upload Courses</h1>
+
+         </div>
+        
+         
+        <div class="modal-body" style="margin: 20px;" >
+          <div class="alert alert-success" *ngIf='message==1'   >You have successfully added</div>
+
+          <form   [formGroup]="courseForm">
+            <div class="row justify-content-between text-left">
+                <div class="form-group col-sm-6 flex-column d-flex" style="padding-top: 5px;"> 
+                  <label class="form-control-label px-3">Former name<span class="text-danger"> *</span></label>
+                  <input type="text" name="" id="" formControlName="formerName" class="form-control">
+                  </div>
+                <div class="form-group col-sm-6 flex-column d-flex"> 
+                  <label class="form-control-label px-3">Center name<span class="text-danger"> *</span></label> 
+                  <input type="text" name="" id="" ngModel="{{centerAuthService.loggedCenter}}" formControlName="centerName" class="form-control">                  
+                </div>
+            </div>
+            <div class="row justify-content-between text-left">
+                <div class="form-group col-sm-6 flex-column d-flex" > 
+                  <label class="form-control-label px-3">Former email<span class="text-danger"> *</span></label> 
+                  <input type="email" name="" id=""  formControlName="formerEmail" class="form-control">                  
+            </div>
+            
+                <div class="form-group col-sm-6 flex-column d-flex"> 
+                  <label class="form-control-label px-3">Center email<span class="text-danger"> *</span></label> 
+                  <input type="text" name="" id=""  ngModel="{{centerAuthService.loggedEmail}}" formControlName="centerEmail"  class="form-control">                  
+                 </div>
+            </div>
+            <div class="row justify-content-between text-left">
+              <div class="form-group col-sm-6 flex-column d-flex" > 
+                <label class="form-control-label px-3">Former Phone number<span class="text-danger"> *</span></label> 
+                <input type="number" name="" id=""  formControlName="formerPhoneNumber"  class="form-control"> 
+                              
+          </div>
+              <div class="form-group col-sm-6 flex-column d-flex"> 
+                <label class="form-control-label px-3">Center Phone number<span class="text-danger"> *</span></label> 
+                <input type="number" name="" id="" ngModel="{{centerAuthService.loggedTelephoneNumber}}" formControlName="phoneNumber" class="form-control">                  
+               </div>
+          </div>
+            
+            <div class="row justify-content-between text-left">
+              <div class="form-group col-sm-6 flex-column d-flex" >
+                 <label class="form-control-label px-3">City<span class="text-danger"> *</span></label>
+                 <input type="text" name="" id="" ngModel="{{centerAuthService.loggedCity}}" formControlName="city" class="form-control">  
+             </div>
+             <div class="form-group col-sm-6 flex-column d-flex"> 
+              <label class="form-control-label px-3">Address<span class="text-danger"> *</span></label>  
+              <input type="text" name="" id="" ngModel="{{centerAuthService.loggedAddress}}" formControlName="address" class="form-control">                
+            </div>
+            
+          </div>
+          <div class="row justify-content-between text-left">
+            <div class="form-group col-sm-6 flex-column d-flex"> 
+              <label class="form-control-label px-3">Course name<span class="text-danger"> *</span></label> 
+              <input type="text" name="" id="" formControlName="courseName" class="form-control">             
+             </div>
+             <div class="form-group col-sm-6 flex-column d-flex"> 
+              <label for ="category"class="form-control-label px-3" >Category<span class="text-danger"> *</span></label>
+
+              <select class="form-control"  name="category" formControlName="category"  style="border-radius: 20px; border-color: darkgray;" >
+                <option value=""></option>
+                <option value="Maths" >Maths</option>
+                <option value="Physics">Physics</option>
+                <option value="Languages">Languages</option>
+                <option value="Computer Science">Computer Science</option>
+                <option value="Dance">Dance</option>
+                <option value="Music">Music</option>
+                <option value="Sports">Sports</option>
+                <option value="Chemistry">Chemistry</option>
+            </select >    
+
+             </div>
+        </div>
+        <div class="row justify-content-between text-left">
+          <div class="form-group col-sm-6 flex-column d-flex"> 
+            <label class="form-control-label px-3">Price<span class="text-danger"> *</span></label>  
+            <input type="number" name="" id="" formControlName="price" class="form-control">                
+          </div>
+          <div class="form-group col-sm-6 flex-column d-flex"> 
+            <label class="form-control-label px-3">Date<span class="text-danger"> *</span></label>  
+            <input type="date" name="" id="" formControlName="date" class="form-control">                </div>
+      </div>
+      <div class="form-group"  style="padding-top: 5px;">     
+        <label class="form-control-label px-3">Picture<span class="text-danger"> *</span></label>
+        <input type="file" name="" id=""  formControlName="picture" class="form-control" (change)="fnChange({event : $event})">  
+    </div>
+        <div class="form-group"  style="padding-top: 5px;">                
+          <label class="form-control-label px-3">Description<span class="text-danger"> *</span></label>         
+          <textarea type="text" name="" id="" formControlName="description" class="form-control">  </textarea>            
+        </div>
+
+        </form>
+              </div>
+        
+        <div class="modal-footer" style="padding-top: 15px; align-self: center; align-items: center;
+        display: flex; padding-bottom: 5px;">
+        <div class="row justify-content-end" style="margin-right:20px;" >
+          <button type="submit" data-dismiss="modal" class="btn-block btn-info"style="border-radius: 20px; font-size: 20px;">close</button> 
+      </div>
+        <div class="row justify-content-end">
+           <button type="submit" class="btn-block btn-success" style="border-radius: 20px; font-size: 20px;"  (click)="fnAdd()  " >Add</button> 
+      </div>
+      
+          
+       
+        
+           </div>
+          
+    </div>
+  </div>
+</div>
+<div class="modal fade m-auto shadow-lg" id="example2Modal" tabindex="-1" role="dialog" aria-labelledby="example2ModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered " role="document" style="margin: auto; ">
+    <div class="modal-content" style="padding-top: 15px;">
+      <div class="modal-header " style="align-items: center; align-self: center; display: flex;">
+          <h1 class="modal-title " id="modal-basic-title" style="font-family: cursive; opacity: 80%;" >Add announcement</h1>
+         </div>
+        
+         
+        <div class="modal-body" style="margin: 20px;" >
+          <div class="alert alert-success" *ngIf='messagee==1'   >You have successfully added</div>
+
+          <form [formGroup]="announcementForm">
+            <div class="row justify-content-between text-left">
+              <div class="form-group col-sm-6 flex-column d-flex" style="padding-top: 5px;"> 
+                <label class="form-control-label px-3">Center name<span class="text-danger"> *</span></label> 
+                <input type="text" name="" id="" formControlName="centerName" class="form-control">             
+              </div>
+              <div class="form-group col-sm-6 flex-column d-flex"> 
+                <label class="form-control-label px-3">Center email<span class="text-danger"> *</span></label> 
+                <input type="email" name="" id=""  ngModel="{{centerAuthService.loggedEmail}}" formControlName="centerEmail" class="form-control">             
+              </div>
+          </div>
+            <div class="row justify-content-between text-left">
+                <div class="form-group col-sm-6 flex-column d-flex" style="padding-top: 5px;"> 
+                  <label class="form-control-label px-3">Phone Number<span class="text-danger"> *</span></label> 
+                  <input type="number" name="" id="" ngModel="{{centerAuthService.loggedTelephoneNumber}}" formControlName="phoneNumber" class="form-control">             
+                </div>
+                <div class="form-group col-sm-6 flex-column d-flex"> 
+                  <label class="form-control-label px-3">Job title<span class="text-danger"> *</span></label> 
+                  <input type="text" name="" id="" formControlName="jobTitle" class="form-control">             
+                </div>
+            </div>
+            <div class="row justify-content-between text-left">
+                <div class="form-group col-sm-6 flex-column d-flex" > 
+                  <label class="form-control-label px-3">Domain<span class="text-danger"> *</span></label> 
+                  <input type="text" name="" id="" formControlName="domain" class="form-control">             
+                </div>
+                <div class="form-group col-sm-6 flex-column d-flex"> 
+                  <label class="form-control-label px-3">Salary<span class="text-danger"> *</span></label> 
+                  <input type="text" name="" id="" formControlName="salary" class="form-control">             
+                </div>
+            </div>
+            
+            <div class="row justify-content-between text-left">
+              <div class="form-group col-sm-6 flex-column d-flex" > 
+                <label class="form-control-label px-3">Required Languages<span class="text-danger"> *</span></label> 
+                <input type="text" name="" id="" formControlName="courseName" class="form-control">             
+              </div>
+              <div class="form-group col-sm-6 flex-column d-flex"> 
+                <label class="form-control-label px-3">Experience<span class="text-danger"> *</span></label> 
+                <input type="text" name="" id="" formControlName="experience" class="form-control">             
+              </div>
+          </div>
+          <div class="row justify-content-between text-left">
+            <div class="form-group col-sm-6 flex-column d-flex"> 
+              <label class="form-control-label px-3">City<span class="text-danger"> *</span></label>
+              <input type="text" name="" id="" formControlName="city" class="form-control">             
+            </div>
+            <div class="form-group col-sm-6 flex-column d-flex"> 
+              <label class="form-control-label px-3">Address<span class="text-danger"> *</span></label>
+              <input type="text" name="" id="" formControlName="address" class="form-control">             
+            </div>
+        </div>
+        <div class="form-group"  style="padding-top: 5px;">                
+          <label class="form-control-label px-3">Description<span class="text-danger"> *</span></label>         
+          <textarea type="text" name="" id="" formControlName="description" class="form-control">  </textarea>            
+        </div>
+     
+        </form>
+              </div>
+        
+        <div class="modal-footer" style="padding-top: 15px; align-self: center; align-items: center;
+        display: flex; padding-bottom: 5px;">
+         <div class="row justify-content-end">
+          <button type="submit" data-dismiss="modal" class="btn-block btn-info"style="border-radius: 20px;">close</button> 
+      </div>
+        <div class="row justify-content-end">
+           <button type="submit" class="btn-block btn-success" style="border-radius: 20px;"  (click)="annAdd()  ">Add</button> 
+      </div>
+     
+          
+       
+        
+           </div>
+          
+    </div>
+  </div>
+</div>

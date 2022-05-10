@@ -1,14 +1,14 @@
+import { StudentService } from './../services/student/student.service';
 import { Component, OnInit ,ViewChild, OnDestroy, SimpleChanges } from '@angular/core';
 
 import { NgbCarousel, NgbSlideEvent, NgbSlideEventSource ,NgbCarouselConfig} from '@ng-bootstrap/ng-bootstrap';
-import { takeUntil } from 'rxjs/operators';
-import { Subject } from 'rxjs';
+
 import { FormBuilder } from '@angular/forms';
 import { CoursesService } from '../services/Courses/courses.service';
 import { FormerAuthService } from '../services/former/former-auth.service';
 import { FormerService } from '../services/former/former.service';
-declare var jQuery:any;
-declare var $:any;
+import { AnnoucementService } from '../services/announcement/annoucement.service';
+
 declare interface TableData {
   
   courses: string[][];
@@ -46,7 +46,8 @@ public tableData2!: TableData1;
 message=0;
 courseForm:any;
 file!: File;
-constructor(config: NgbCarouselConfig,public formerAuthService:FormerAuthService,public formerService:FormerService,private fb:FormBuilder, private courseservice:CoursesService) {
+constructor(config: NgbCarouselConfig,public formerAuthService:FormerAuthService,public studentService: StudentService
+  ,public formerService:FormerService,private fb:FormBuilder, private courseservice:CoursesService,private annnoucementService:AnnoucementService) {
   config.showNavigationArrows = true;
     config.showNavigationIndicators = true;
     this.courseForm=this.fb.group({
@@ -62,15 +63,28 @@ constructor(config: NgbCarouselConfig,public formerAuthService:FormerAuthService
     });
 
    }
+   users:any;
+   courseId:any;
+   public getStudentByCourses(courseid:any){
+     this.studentService.getUserByCourse(courseid).subscribe((data: any)=>this.users=data);
+     
+   }
 
    picture:any;
+   annonces:any;
   public formerEmail=localStorage.getItem('loggedEmail')!;
   public formerPhoneNumber=localStorage.getItem('loggedTelephoneNumber')!;
-
-ngOnInit(): void {
+  courses:any;
+  ngOnInit(): void {
   let loggedEmail: string;
     loggedEmail=localStorage.getItem('loggedEmail')!;
     this.formerService.getPicture(loggedEmail).subscribe((data: any)=>this.picture=data);
+    this.annnoucementService.getAllAnnouncements().subscribe((data: any)=>this.annonces=data);
+    this.courseservice.getCourseByEmail(loggedEmail).subscribe((data: any)=>this.courses=data);
+
+  this.getStudentByCourses(this.courseId);
+    //this.studentService.getUserByCourse(31).subscribe((data: any)=>this.users=data);
+
   this.tableData2={ gouvernorat: [ 'Ariana', 'Bèja', 'BenArous', 'Bizerte', 'Gabès',
   'Gafsa', 'Jendouba', 'Kairouan', 'Kasserine', 'Kébili',
   'Le Kef', 'Mahdia', 'La Manouba', 'Médenine', 'Monastir',

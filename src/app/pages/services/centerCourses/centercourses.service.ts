@@ -15,4 +15,21 @@ export class CentercoursesService {
       headers: this.requestHeader,
     });
   }
+  getCenterCourseByCategory(categoryName:String){
+    return this.http.get(`${this.PATH_OF_API}/centerCategory/${categoryName}`,{
+      headers: this.requestHeader,
+    });
+
+  }
+  getCenterCourseByEmail(formerEmail: String){
+    return this.http.get(`${this.PATH_OF_API}/centerFormerEmail/${formerEmail}`,{
+      headers: this.requestHeader,
+    });
+  }
+  getAllCenterCourses()
+  {
+    return this.http.get(`${this.PATH_OF_API}/centerCourses`, {
+      headers: this.requestHeader,
+    });
+  }
 }

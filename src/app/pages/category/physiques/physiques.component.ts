@@ -1,3 +1,4 @@
+import { CentercoursesService } from './../../services/centerCourses/centercourses.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
@@ -13,11 +14,13 @@ import { StudentAuthService } from '../../services/student/student-auth.service'
 })
 export class PhysiquesComponent implements OnInit {
 
-  constructor(public route:Router,private fb:FormBuilder, private coursesservice:CoursesService,private studentAuthService :StudentAuthService,private formerService: FormerService) { }
+  constructor(public route:Router,private fb:FormBuilder, private coursesservice:CoursesService,private studentAuthService :StudentAuthService,private formerService: FormerService,private centerCourseService:CentercoursesService) { }
   courses:any;
+  centercourses:any;
   category="Physics";
   ngOnInit(): void {
     this.coursesservice.getCourseByCategory(this.category).subscribe((data: any)=>this.courses=data);
+    this.centerCourseService.getCenterCourseByCategory(this.category).subscribe((data: any)=>this.centercourses=data);
   }
   public isLoggedIn() {
     return this.studentAuthService.isLoggedIn();

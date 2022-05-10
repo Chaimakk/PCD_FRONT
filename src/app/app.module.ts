@@ -85,6 +85,10 @@ import { ChemistryComponent } from './pages/category/chemistry/chemistry.compone
 import { HomeStudentComponent } from './pages/home-student/home-student.component';
 import { AfficheProfileComponent } from './pages/affiche-profile/affiche-profile.component';
 import { CityComponent } from './pages/city/city.component';
+import { CenterFormerComponent } from './pages/center-former/center-former.component';
+import { CenterCategoryComponent } from './pages/center-category/center-category.component';
+import { CenterCoursesComponent } from './pages/center-courses/center-courses.component';
+import { TeamsComponent } from './pages/teams/teams.component';
 
 @NgModule({
   declarations: [
@@ -143,6 +147,10 @@ import { CityComponent } from './pages/city/city.component';
     HomeStudentComponent,
     AfficheProfileComponent,
     CityComponent,
+    CenterFormerComponent,
+    CenterCategoryComponent,
+    CenterCoursesComponent,
+    TeamsComponent,
   ],
   imports: [
     BrowserModule,

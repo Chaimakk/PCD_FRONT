@@ -88,11 +88,19 @@ main .helper span {
   transition: all 0.15s linear;
   cursor: pointer;
 }
+
 .menu ul li.icon-messages {
-  background-image: url("http://icongr.am/entypo/typing.svg?size=128&color=261d51");
+  background-image: url("https://icongr.am/material/account-details.svg?size=128&color=261d51");
+}
+.menu ul li.icon-favorite {
+  background-image: url("http://icongr.am/entypo/heart.svg?size=128&color=261d51");
 }
 .menu ul li.icon-calendar {
-  background-image: url("http://icongr.am/entypo/calendar.svg?size=128&color=261d51");
+  background-image: url("http://icongr.am/entypo/user.svg?size=128&color=261d51");
+  color: #261d51;
+}
+.menu ul li.icon-calendar {
+  background-image: url("http://icongr.am/entypo/user.svg?size=128&color=261d51");
   color: #261d51;
 }
 .menu ul li.icon-suggestions {

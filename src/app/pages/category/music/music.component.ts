@@ -42,11 +42,12 @@ export class MusicComponent implements OnInit {
 /***************************/
 public formerEmail:any;
 public courseName:any;
-public clicklink(Email:String,course:String){
+public id:any;
+public clicklink(Email:String,course:String,id:number){
   this.formerEmail=Email;
   this.courseName=course;
-  this. route. navigate([`/afficheprofile/${Email}/${course}`]);
+  this.id=id;
+  this. route. navigate([`/afficheprofile/${Email}/${course}/${id}`]);
 
 
-}
-}
+}}

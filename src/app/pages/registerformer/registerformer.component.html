@@ -1,11 +1,17 @@
-
-<section class="register-former" style="padding-top: 80px;">
-    <div class="container mt-1 mb-1 m-auto shadow-lg " style="background-color: #fff;">
-        <br>
-      <h2 class="col-lg-6  m-auto"  style="font-weight: bold ;font-size: 2em;">FORMER REGISTRATION</h2><br>
+<div class="main-content "  >
+  <div class="container-fluid mt-5" style="padding-top: 60px; margin-left: auto; margin-right: auto;">
+         <br>
         <form #myForm="ngForm" (ngSubmit)="myForm.valid && registerNewFormer(myForm)" class="register col-lg-6 m-auto " style="font-weight: bold ;font-size: 1.2em;" >
-          <div class="alert alert-danger" *ngIf='invalidLogin'>{{errorMessage}}</div>
+          <div class="col-md-12 " >
+            
+            <div class="card  mr-4 shadow-lg " style="border-radius: 7px; width: 800px; padding: 30px; margin-left: auto; margin-right: auto;">
+              <a style=" text-align:center; " ><img src="../../../assets/img/welearn4.png" sizes="60px" alt="..." height="60px"> </a>
+          
+              <h2 class="col-lg-6  m-auto" style="font-weight: bold ;font-size: 2em;align-items: center; text-align: center;">Former Registration</h2><br>
+              
           <div class="row">
+            <div class=" col-md-12 alert alert-danger " *ngIf='invalidLogin'  >{{errorMessage}}</div>
+              
                 <div class="col-lg-6 mt-2 mb-2">
                     <label >Full Name <span class="text-danger">*</span></label>
                     <input name="userFullName"  [(ngModel)]="former.userFullName" #userFullName="ngModel" [ngClass]="{'is-invalid':myForm.submitted && userFullName.invalid}" required type="text" class="form-control"  >
@@ -35,9 +41,9 @@
                     <input name="userBirthday"  [(ngModel)]="former.userBirthday" #userBirthday="ngModel" [ngClass]="{'is-invalid':myForm.submitted && userBirthday.invalid}" required type="date" class="form-control"  >
                 </div>
                 <div class="col-lg-6 mt-2 mb-2">
-                    <label for="gender" >Gender <span class="text-danger">*</span></label>
+                    <label for="gender"  >Gender <span class="text-danger">*</span></label>
                     <br>
-                    <select class="form-control" [(ngModel)]="former.userGender" name="userGender" #userGender="ngModel" [ngClass]="{'is-invalid':myForm.submitted && userGender.invalid}" required id="gender" style="width:245px;height:39px;border-radius: 20px;" >
+                    <select class="form-control" [(ngModel)]="former.userGender" name="userGender" #userGender="ngModel" [ngClass]="{'is-invalid':myForm.submitted && userGender.invalid}" required id="gender" style="width:357px;height:39px;border-radius: 20px;" >
                    <option value=""></option>
                       <option value="Male" >Male</option>
                       <option value="Female">Female</option>
@@ -65,7 +71,7 @@
               <input name="userLevel"  [(ngModel)]="former.userLevel"  #userLevel="ngModel" [ngClass]="{'is-invalid':myForm.submitted && userLevel.invalid}" required  type="text" class="form-control"  >
             </div>
             <div class="col-lg-6 mt-2 mb-2">
-                <label >Domain <span class="text-danger">*</span></label>
+                <label >Job <span class="text-danger">*</span></label>
               <input name="userDomain"  [(ngModel)]="former.userDomain" #userDomain="ngModel" [ngClass]="{'is-invalid':myForm.submitted && userDomain.invalid}" required  type="text" class="form-control"  >
             </div>
             
@@ -79,10 +85,20 @@
            
           
           </div>-->
-            <div class="col-lg-12 mt-2 mb-2">
+            <div class="col-lg-6 mt-2 mb-2">
                 <label >Experience <span class="text-danger">*</span></label>
                 <input name="userExperience"  [(ngModel)]="former.userExperience" #userExperience="ngModel" [ngClass]="{'is-invalid':myForm.submitted && userExperience.invalid}" required  type="text" class="form-control"  >
             </div>
+            <div class="col-lg-6 mt-2 mb-2">
+              <label >Interests <span class="text-danger">*</span></label>
+              <input name="interests"  [(ngModel)]="former.interests" #interests="ngModel" [ngClass]="{'is-invalid':myForm.submitted && interests.invalid}" required  type="text" class="form-control"  >
+          </div>
+         
+          <div class="col-lg-12 mt-2 mb-2">
+            <label >Skills <span class="text-danger">*</span></label>
+            <input name="skills"  [(ngModel)]="former.skills" #skills="ngModel" [ngClass]="{'is-invalid':myForm.submitted && userExperience.invalid}" required  type="text" class="form-control"  >
+        </div>
+       
             <div class="col-lg-12 mt-2 mb-2">
                 <label>Description <span class="text-danger">*</span></label>
                 <textarea name="userDescription"  [(ngModel)]="former.userDescription" #userDescription="ngModel" [ngClass]="{'is-invalid':myForm.submitted && userDescription.invalid}" required  type="text" class="form-control" rows="6">
@@ -106,8 +122,10 @@
       
       
             </div>
+          </div>
+        </div>
         </form>
       </div>
       
 
-</section>
+    </div>

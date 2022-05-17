@@ -1,140 +1,4 @@
 
- <!---- <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <div class="prin conatiner " style="padding-top: 50px;padding-bottom: 50px;" *ngFor="let f of infosU" >
-  <div class="container emp-profile"    >
-              <form method="post">
-                  <div class="row">
-                      <div class="col-md-4">
-  
-                          <div class="profile-img">
-                              <img   srcset="data:image/png;base64,{{picture}}"/>
-                              
-                          </div>
-                      </div>
-                      <div class="col-md-6">
-                          <div class="profile-head">
-                                      <h5> {{f.userFullName}}</h5>
-                                      <h6>
-                                          Web Developer and Designer
-                                      </h6>
-                                      <p class="proile-rating">RANKINGS : <span>8/10</span></p>
-                              <ul class="nav nav-tabs" id="myTab" role="tablist">
-                                  <li class="nav-item">
-                                      <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
-                                  </li>
-                                  <li class="nav-item">
-                                      <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Timeline</a>
-                                  </li>
-                              </ul>
-                          </div>
-                      </div>
-                      
-                  </div>
-                  <div class="row">
-                      <div class="col-md-4">
-                          <div class="profile-work">
-                             
-                             
-                          </div>
-                      </div>
-                      <div class="col-md-8" *ngFor="let c of infosC" >
-                          <div class="tab-content profile-tab" id="myTabContent">
-                              <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab" >
-                                          <div class="row">
-                                              <div class="col-md-6">
-                                                  <label>User Name</label>
-                                              </div>
-                                              <div class="col-md-6">
-                                                  <p>{{f.userName}}</p>
-                                              </div>
-                                          </div>
-                                          <div class="row">
-                                              <div class="col-md-6">
-                                                  <label>Full Name</label>
-                                              </div>
-                                              <div class="col-md-6">
-                                                  <p>{{f.userFullName}}</p>
-                                              </div>
-                                          </div>
-                                          <div class="row">
-                                              <div class="col-md-6">
-                                                  <label>Email</label>
-                                              </div>
-                                              <div class="col-md-6">
-                                                  <p>{{user.formerEmail}}</p>
-                                              </div>
-                                          </div>
-                                          <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Course Name</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>{{user.courseName}}</p>
-                                            </div>
-                                        </div>
-                                          <div class="row">
-                                              <div class="col-md-6">
-                                                  <label>Phone</label>
-                                              </div>
-                                              <div class="col-md-6">
-                                                  <p>{{c.phoneNumber}}</p>
-                                              </div>
-                                          </div>
-                                          <div class="row">
-                                              <div class="col-md-6">
-                                                  <label>Profession</label>
-                                              </div>
-                                              <div class="col-md-6">
-                                                  <p>Web Developer and Designer</p>
-                                              </div>
-                                          </div>
-                              </div>
-                              <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                                          <div class="row">
-                                              <div class="col-md-6">
-                                                  <label>Experience</label>
-                                              </div>
-                                              <div class="col-md-6">
-                                                  <p>{{f.userExperience}}</p>
-                                              </div>
-                                          </div>
-                                          <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Level</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>{{f.userLevel}}</p>
-                                            </div>
-                                        </div>
-                                          <div class="row">
-                                              <div class="col-md-6">
-                                                  <label>Hourly Rate</label>
-                                              </div>
-                                              <div class="col-md-6">
-                                                  <p>10dt/hr</p>
-                                              </div>
-                                          </div>
-                                         
-                                          
-                                          <div class="row">
-                                              <div class="col-md-6">
-                                                  <label>Availability</label>
-                                              </div>
-                                              <div class="col-md-6">
-                                                  <p>6 months</p>
-                                              </div>
-                                          </div>
-                                  
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </form>           
-          </div>
-        </div>--->
-  <!----------------------------------------------------------------------------------------->
   <div class="profile-page"  *ngFor="let f of infosU">
     <div class="main main-raised" style="margin-top:160px;">
         <div class="profile-content">
@@ -148,13 +12,14 @@
                             </div>
                             <div class="name" >
                                 <h2 class="title"> {{f.userFullName}}</h2>
-                                <h3>Web Developer</h3>
+                                
                                 </div>
                         </div>
                     </div>
                 </div>
                 <div class="description text-center">
-                    <p>An artist of considerable range, Chet Faker — the name taken by Melbourne-raised, Brooklyn-based Nick Murphy — writes, performs and records all of his own music, giving it a warm, intimate feel with a solid groove structure. </p>
+                    <p>{{f.userDescription}}
+                       </p>
                 </div>
                 <div class="row">
                     <div class="col-md-12 ml-auto mr-auto">
@@ -172,10 +37,16 @@
                                     Contact
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#favorite" role="tab" data-toggle="tab">
-                                  <i class="material-icons">place</i>
-                                    Place
+                            <li class="nav-item" >
+                                <a class="nav-link" href="#reviews" role="tab" data-toggle="tab">
+                                  <i class="material-icons">feedback </i>
+                                    Reviews
+                                </a>
+                            </li>
+                            <li class="nav-item" *ngIf="studentService.roleMatch(['Student'])">
+                                <a class="nav-link" href="#addreview" role="tab" data-toggle="tab">
+                                  <i class="material-icons">rate_review</i>
+                                    Add Review
                                 </a>
                             </li>
                           </ul>
@@ -187,7 +58,7 @@
                 
             </div>
         
-          <div class="tab-content tab-space">
+          <div class="tab-content tab-space" >
             <div class="tab-pane active " id="person">
                 <div class="row  " >
                     <div class="col-md-6 ">
@@ -208,10 +79,10 @@
                 
                 <div class="row">
                     <div class="col-md-6">
-                        <label>Profession</label>
+                        <label>Domain</label>
                     </div>
                     <div class="col-md-6">
-                        <p>Web Developer </p>
+                        <p>{{f.userDomain}} </p>
                     </div>
                 </div>
                 
@@ -231,38 +102,23 @@
                         <p>{{f.userLevel}}</p>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row" >
                     <div class="col-md-6">
-                        <label>Hourly Rate</label>
+                        <label>Training name </label>
                     </div>
                     <div class="col-md-6">
-                        <p>10$/hr</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <label>Total Projects</label>
-                    </div>
-                    <div class="col-md-6">
-                        <p>230</p>
+                        <p>{{CourseName}}</p>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row" >
                     <div class="col-md-6">
-                        <label>English Level</label>
+                        <label> Price </label>
                     </div>
                     <div class="col-md-6">
-                        <p>Expert</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <label>Availability</label>
-                    </div>
-                    <div class="col-md-6">
-                        <p>6 months</p>
+                        <p>{{courses.price}}</p>
                     </div>
                 </div>
+               
               </div>
             <div class="tab-pane " id="contact" >
                 <div class="row">
@@ -281,11 +137,129 @@
                         <p>{{f.userTelephoneNumber}}</p>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label>City</label>
+                    </div>
+                    <div class="col-md-6">
+                        <p>{{f.userCity}}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label>Address</label>
+                    </div>
+                    <div class="col-md-6">
+                        <p>{{f.userAddress}}</p>
+                    </div>
+                </div>
               </div>
-            <div class="tab-pane text-center gallery" id="favorite">
-                  <div class="row">
+            <div class="tab-pane "id="reviews">
+                  
+                  <div class="container">
+                    <div class="row">
+                       <div class="col-lg-3">
+                                        <label><h2>Reviews</h2></label>
+                                    </div>
+                      
+                    
+              
+                        <div class="row" *ngFor="let r of reviews">
+                            <div class="col-sm-8">
+                                <div class="bg-light p-2">
+                                    <div class="row d-flex">
+                                        <h6 class="name " style="font-size:large ;">{{r.userName}}</h6>
+                                  
+                                    </div>
+                                      <div class="d-flex flex-row align-items-start"><p>{{r.addReview}}</p></div>
+                                       </div>
+                                
+                                
+                              
+                
+                                   
+                            </div>
+                          
+                        </div>
+             
+                    </div>
+                </div>
+                 
+              </div>
+              <div class="tab-pane " id="addreview">
+               <!---- <div class="row" >
+                    <div class="col-lg-3">
+                        <label>Review</label>
+                    </div>
+                    <div class="col-lg-9">
+                      <div class="row" style="display: -webkit-box;
+                      display: -ms-flexbox;
+                      display: flex;
+                      -webkit-box-align: center;
+                          -ms-flex-align: center;
+                              align-items: center;
+                      -webkit-box-pack: justify;
+                          -ms-flex-pack: justify;
+                              justify-content: space-between;" >
+                        <div class="col-lg-8">
+                            <input  name="review"   type="text" class="form-control"  >
+                        </div>
+                        <div class="col-lg-4">
+                            <button  name="review"   type="button" class="btn btn-primary" style="padding: 10px;"  >Submit</button>
+
+                        </div>
+
+                      </div>
+                       
+                    </div>
+                    
+                </div>-->
+                <header id="head" class="secondary"></header>
+<!-- container -->
+<div class="container">
+    <div class="row">
+       <div class="col-lg-3">
+                        <label><h2>Add Review</h2></label>
+                    </div>
+                    <div class="alert alert-success" *ngIf='message==1'   >You have successfully added</div>
+        <p class="lead">
+           
+            <small class="text-muted">You took a training ! now tell us what you think  </small>
+        </p>
+
+        <hr />
+
+        <div class="row">
+            <div class="col-sm-8">
+
+                
+                <form role="form" [formGroup]="reviewForm">
+                    <!--ce message n'est afficher que si lorsque invalid=true-->
+                    <input type="hidden" class="form-control"  ngModel="{{Email}}"  name="" id="" formControlName="email" required   >
+                    <input type="hidden" class="form-control"  ngModel="{{courseId}}"  name="" id="" formControlName="courseId" required   >
+                    <input type="hidden" class="form-control" name="" ngModel="{{loggedUser}}" id="" formControlName="userName" required   >
+                    <div class="bg-light p-2">
+                    <div class=" form-group float-label-control">
+                        <div class="d-flex flex-row align-items-start"><textarea class="form-control ml-1 shadow-none textarea" placeholder="insert your review" name="" id="" formControlName="addReview" required  ></textarea></div>
+                        <div class="mt-2 text-right"><button class="btn btn-primary btn-sm shadow-none" type="button" style="background-color:cadetblue ; " (click)="AddR()">Post comment</button></div>
+                    </div>
                   </div>
-              </div>
+                   
+                               
+                     
+                                                                               
+                </form>
+              
+
+                   
+            </div>
+          
+        </div>
+      
+    </div>
+</div>
+                
+            </div>
           </div>
     
         

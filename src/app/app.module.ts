@@ -89,6 +89,12 @@ import { CenterFormerComponent } from './pages/center-former/center-former.compo
 import { CenterCategoryComponent } from './pages/center-category/center-category.component';
 import { CenterCoursesComponent } from './pages/center-courses/center-courses.component';
 import { TeamsComponent } from './pages/teams/teams.component';
+import { RechercheProfCenterComponent } from './pages/recherche-prof-center/recherche-prof-center.component';
+import { CvComponent } from './pages/cv/cv.component';
+import { FormerCoursesComponent } from './pages/former-courses/former-courses.component';
+import { CentertrainingsComponent } from './pages/centertrainings/centertrainings.component';
+import { AnnouncementsComponent } from './pages/announcements/announcements.component';
+import { CandidatureComponent } from './pages/candidature/candidature.component';
 
 @NgModule({
   declarations: [
@@ -151,6 +157,12 @@ import { TeamsComponent } from './pages/teams/teams.component';
     CenterCategoryComponent,
     CenterCoursesComponent,
     TeamsComponent,
+    RechercheProfCenterComponent,
+    CvComponent,
+    FormerCoursesComponent,
+    CentertrainingsComponent,
+    AnnouncementsComponent,
+    CandidatureComponent,
   ],
   imports: [
     BrowserModule,

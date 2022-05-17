@@ -39,6 +39,11 @@ export class CenterService {
     return this.httpclient.delete<void>(`${this.PATH_OF_API}/delete-user/${center}`);
 
   }
+  getUsersByEmail(userEmail:String){
+    return this.httpclient.get(`${this.PATH_OF_API}/userEmail/${userEmail}`, {
+      headers: this.requestHeader,
+    });
+  }
 
   public roleMatchC(allowedRoles: string | any[]): boolean {
     let isMatch = false;

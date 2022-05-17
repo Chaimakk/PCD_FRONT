@@ -8,6 +8,7 @@ import { CoursesService } from '../services/Courses/courses.service';
 import { FormerAuthService } from '../services/former/former-auth.service';
 import { FormerService } from '../services/former/former.service';
 import { AnnoucementService } from '../services/announcement/annoucement.service';
+import { ReviewsService } from '../services/reviews/reviews.service';
 
 declare interface TableData {
   
@@ -46,8 +47,9 @@ public tableData2!: TableData1;
 message=0;
 courseForm:any;
 file!: File;
+loggedEmail=localStorage.getItem('loggedEmail')!;
 constructor(config: NgbCarouselConfig,public formerAuthService:FormerAuthService,public studentService: StudentService
-  ,public formerService:FormerService,private fb:FormBuilder, private courseservice:CoursesService,private annnoucementService:AnnoucementService) {
+  ,public formerService:FormerService,private fb:FormBuilder, private courseservice:CoursesService,private annnoucementService:AnnoucementService,private reviewsService:ReviewsService) {
   config.showNavigationArrows = true;
     config.showNavigationIndicators = true;
     this.courseForm=this.fb.group({
@@ -61,30 +63,37 @@ constructor(config: NgbCarouselConfig,public formerAuthService:FormerAuthService
       city:[''],
       phoneNumber:['']
     });
+  
 
    }
    users:any;
    courseId:any;
-   public getStudentByCourses(courseid:any){
-     this.studentService.getUserByCourse(courseid).subscribe((data: any)=>this.users=data);
+   public getStudentByCourses(courseId:any){
+     this.studentService.getUserByCourse(courseId).subscribe((data: any)=>this.users=data);
      
    }
 
    picture:any;
    annonces:any;
+   reviews:any;
   public formerEmail=localStorage.getItem('loggedEmail')!;
   public formerPhoneNumber=localStorage.getItem('loggedTelephoneNumber')!;
   courses:any;
+  count:any;
   ngOnInit(): void {
   let loggedEmail: string;
     loggedEmail=localStorage.getItem('loggedEmail')!;
     this.formerService.getPicture(loggedEmail).subscribe((data: any)=>this.picture=data);
     this.annnoucementService.getAllAnnouncements().subscribe((data: any)=>this.annonces=data);
     this.courseservice.getCourseByEmail(loggedEmail).subscribe((data: any)=>this.courses=data);
+    this.reviewsService.countReviews(loggedEmail).subscribe((data:any)=>this.count=data);
+    this.studentService.getUserByCourse(this.courseId).subscribe((data: any)=>this.users=data);
 
-  this.getStudentByCourses(this.courseId);
-    //this.studentService.getUserByCourse(31).subscribe((data: any)=>this.users=data);
-
+    this.reviewsService.getReviewsByEmail(loggedEmail).subscribe((data:any)=>this.reviews=data);
+    //this.countReviews(loggedEmail);
+   
+      
+  
   this.tableData2={ gouvernorat: [ 'Ariana', 'Bèja', 'BenArous', 'Bizerte', 'Gabès',
   'Gafsa', 'Jendouba', 'Kairouan', 'Kasserine', 'Kébili',
   'Le Kef', 'Mahdia', 'La Manouba', 'Médenine', 'Monastir',
@@ -182,6 +191,12 @@ public isLoggedInF() {
     this.courseservice.addCourse(fd).subscribe((data: any)=>console.log(data));
 
   }
+  email:any;
+  id:any;
+  accept(email:any,id:number){
+    this.reviewsService.acceptReviews(email,id).subscribe((data:any)=>console.log(data))
+  }
+  
   public onOpenModal( mode: string): void {
     
     const button = document.createElement('button');
@@ -194,7 +209,14 @@ public isLoggedInF() {
     
     button.click();
   }
-
+  public DeleteReview(reviewId: number){
+    this.reviewsService.deleteReview(reviewId).subscribe(
+      (data: any)=>
+      this.reviews=data);
+  
+   
+    
+  }
 
   
 }

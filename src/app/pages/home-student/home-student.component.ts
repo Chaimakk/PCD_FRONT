@@ -8,6 +8,7 @@ import { CoursesService } from '../services/Courses/courses.service';
 import { FormerAuthService } from '../services/former/former-auth.service';
 import { FormerService } from '../services/former/former.service';
 import { StudentAuthService } from '../services/student/student-auth.service';
+import { Course } from '../model/course';
 declare var jQuery:any;
 declare var $:any;
 declare interface TableData {
@@ -166,4 +167,27 @@ export class HomeStudentComponent implements OnInit {
   
   
   }
+  /********************************** */
+
+  public searchValues(key: string): void {
+    console.log(key);
+    const results: Course[] = [];
+    for (const cours of this.courses) {
+      if (cours.courseName.toLowerCase().indexOf(key.toLowerCase()) !== -1
+      || cours.formerEmail.toLowerCase().indexOf(key.toLowerCase()) !== -1
+      || cours.formerName.toLowerCase().indexOf(key.toLowerCase()) !== -1
+      || cours.category.toLowerCase().indexOf(key.toLowerCase()) !== -1
+      )
+       {
+        results.push(cours);
+      }
+    }
+    this.courses = results;
+    if (results.length === 0 || !key) {
+      let loggedCity: string;
+      loggedCity=localStorage.getItem('loggedCity')!;
+      this.coursesservice.getCourseByCity(loggedCity);
+    }
+  }
+  
 }

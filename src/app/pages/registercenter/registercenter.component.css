@@ -1,7 +1,7 @@
-.register-center{
+.main-content{
     
     background-color: #eff6ff;
-    padding: 70px 100px;
+    padding-right: 400px;
 }
 .bv{
     background-color: #261d51;
@@ -14,3 +14,4 @@
       transition: all 0.3s ease;
       cursor: pointer;
   }
+ 

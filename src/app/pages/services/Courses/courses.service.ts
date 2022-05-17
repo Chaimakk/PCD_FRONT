@@ -13,7 +13,11 @@ export class CoursesService {
   requestHeader = new HttpHeaders({ 'No-Auth': 'True' });
   PATH_OF_API = 'http://localhost:9090';
 
- 
+  getCourseById(id:number){
+    return this.http.get(`${this.PATH_OF_API}/getCourseById/${id}`, {
+      headers: this.requestHeader,
+    });
+  }
   getAllCourses()
   {
     return this.http.get(`${this.PATH_OF_API}/courses`, {

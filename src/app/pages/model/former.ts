@@ -16,6 +16,8 @@ export class Former {
      userDomain!:string;
      userExperience!:string;
      userDescription!:string;
+     skills!:string;
+     interests!:string;
     
 
     roles!:Role[];

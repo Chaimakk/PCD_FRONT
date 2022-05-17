@@ -1,3 +1,5 @@
+import { CentertrainingsComponent } from './pages/centertrainings/centertrainings.component';
+import { FormerCoursesComponent } from './pages/former-courses/former-courses.component';
 import { CenterCoursesComponent } from './pages/center-courses/center-courses.component';
 import { CenterCategoryComponent } from './pages/center-category/center-category.component';
 import { CenterFormerComponent } from './pages/center-former/center-former.component';
@@ -57,6 +59,10 @@ import { AfficheProfileComponent } from './pages/affiche-profile/affiche-profile
 import { FavoritesStudentComponent } from './pages/favorites-student/favorites-student.component';
 import { CityComponent } from './pages/city/city.component';
 import { TeamsComponent } from './pages/teams/teams.component';
+import { RechercheProfCenterComponent } from './pages/recherche-prof-center/recherche-prof-center.component';
+import { CvComponent } from './pages/cv/cv.component';
+import { AnnouncementsComponent } from './pages/announcements/announcements.component';
+import { CandidatureComponent } from './pages/candidature/candidature.component';
 
 
 const routes: Routes = [{path:"",component:HomeComponent   },
@@ -86,11 +92,11 @@ const routes: Routes = [{path:"",component:HomeComponent   },
 { path: 'updateprofile', component: UpdateprofileComponent,  canActivate:[AuthGuard], data:{roles:['Student']} },
 {path:"home-student/billing",component:BillingComponent,  canActivate:[AuthGuard], data:{roles:['Student']} },
 {path:"studentprofile/updateprofile",component:UpdateprofileComponent,  canActivate:[AuthGuard], data:{roles:['Student']} },
+{path:"home-student/studentprofile/updateprofile",component:UpdateprofileComponent,  canActivate:[AuthGuard], data:{roles:['Student']} },
 
 { path: 'home-center', component: HomeCenterComponent ,  canActivate:[AuthGuard], data:{roles:['Center']} },
 { path: 'home-student', component: HomeStudentComponent ,  canActivate:[AuthGuard], data:{roles:['Student']} },
 { path: 'favoriteStudent', component: FavoritesStudentComponent,  canActivate:[AuthGuard], data:{roles:['Student']} },
-{ path: 'home-student/favoriteStudent', component: FavoritesStudentComponent,  canActivate:[AuthGuard], data:{roles:['Student']} },
 
 {path: "center-former/center-category/center-courses/:category", component: CenterCoursesComponent},
 {path: "center-former/center-category/center-courses", component: CenterCoursesComponent},
@@ -118,6 +124,8 @@ const routes: Routes = [{path:"",component:HomeComponent   },
 { path: 'home-center/teams', component: TeamsComponent},
 { path: 'informatique', component: InformatiqueComponent},
 {path:"center-former/courses/informatique", component:InformatiqueComponent},
+{path:"home/center-former", component:CenterFormerComponent},
+
 { path: 'mathematique', component: MathematiqueComponent},
 { path: 'center-former/courses/mathematique', component: MathematiqueComponent},
 {path:"center-former/courses/chemistry", component:ChemistryComponent},
@@ -137,7 +145,7 @@ const routes: Routes = [{path:"",component:HomeComponent   },
 {path:"music", component:MusicComponent},
 
 {path:"afficheprofile", component:AfficheProfileComponent},
-{path:"afficheprofile/:formerEmail/:courseName", component:AfficheProfileComponent},
+{path:"afficheprofile/:formerEmail/:courseName/:id", component:AfficheProfileComponent},
 {path:"coursecity/:city",component:CityComponent},
 
 
@@ -151,6 +159,22 @@ const routes: Routes = [{path:"",component:HomeComponent   },
 { path: 'admin/allformertable', component: AllformertableComponent},
 { path: 'admin/allcentertable', component: AllcentertableComponent},
 { path: 'admin/alladmintable', component: AlladmintableComponent},
+{ path: 'recherche-prof-center', component: RechercheProfCenterComponent},
+{ path: 'home-center/recherche-prof-center', component: RechercheProfCenterComponent},
+{path:"cv", component:CvComponent,  canActivate:[AuthGuard], data:{roles:['Former']} },
+{path:"home-center/cv", component:CvComponent,  canActivate:[AuthGuard], data:{roles:['Former']} },
+{path:"home-student/studentprofile", component:StudentprofileComponent,  canActivate:[AuthGuard], data:{roles:['Student']} },
+{path:"home-student/favoriteStudent", component:FavoritesStudentComponent,  canActivate:[AuthGuard], data:{roles:['Student']} },
+{ path: 'home-student/formerCourses', component: FormerCoursesComponent},
+{ path: 'formerCourses', component: FormerCoursesComponent},
+{ path: 'home-student/centertrainings', component: CentertrainingsComponent},
+{ path: 'centertrainings', component: CentertrainingsComponent},
+{ path: 'announcement', component: AnnouncementsComponent},
+{ path: 'home-former/announcement', component: AnnouncementsComponent},
+{ path: 'home-center/candidature', component: CandidatureComponent},
+{ path: 'candidature', component: CandidatureComponent},
+
+
 
 ];
 

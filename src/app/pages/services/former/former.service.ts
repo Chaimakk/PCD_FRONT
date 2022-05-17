@@ -54,6 +54,12 @@ export class FormerService {
             headers: this.requestHeader,
           });
         }
+        Apply(applycenter:any,formerEmail:String)
+        {
+          return this.httpclient.put(`${this.PATH_OF_API}/apply/${applycenter},${formerEmail}`, {
+            headers: this.requestHeader,
+          });
+        }
   public deleteFormer(former:String) :Observable<void> {
     return this.httpclient.delete<void>(`${this.PATH_OF_API}/delete-user/${former}`);
 

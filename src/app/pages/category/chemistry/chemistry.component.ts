@@ -13,8 +13,7 @@ import { CentercoursesService } from '../../services/centerCourses/centercourses
   styleUrls: ['./chemistry.component.css']
 })
 export class ChemistryComponent implements OnInit {
-  public formerEmail:any;
-  public courseName:any;
+
   public profileMail:any;
   constructor(public route:Router,private fb:FormBuilder, private coursesservice:CoursesService,private studentAuthService :StudentAuthService,private formerService: FormerService,private centerCourseService:CentercoursesService) { }
   courses:any;
@@ -42,11 +41,14 @@ public favorite(id:number){
 }
 /***************************/
 
-public clicklink(Email:String,course:String){
+public formerEmail:any;
+public courseName:any;
+public id:any;
+public clicklink(Email:String,course:String,id:number){
   this.formerEmail=Email;
   this.courseName=course;
-  this. route. navigate([`/afficheprofile/${Email}/${course}`]);
+  this.id=id;
+  this. route. navigate([`/afficheprofile/${Email}/${course}/${id}`]);
 
 
-}
-}
+}}

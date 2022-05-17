@@ -1,266 +1,18 @@
-<!----
-<mat-drawer-container class="example-container"  autosize >
-  <mat-drawer #drawer class="example-sidenav" mode="side" [opened]="true" style="padding-top: 70px;">
-    
-    
-    
-    <div style="align-items: center; align-self: center; display: flex; padding: 15px; "  >
-      
-      <img class="globalRoundProfile "  id="graft2" src="../../../assets/img/use1.png" >
-      <label for="graft2" style="padding-left: 10px; color: #261d51; font-size: medium; font-weight: bold;">{{studentAuthService.loggedStudent}}</label>
-      
-  
-  </div>
-    <mat-list >
-      <mat-list-item style="background-color: lightgray;">
-      <mat-icon style="color:#261d51 ;margin-right: 20px;">home</mat-icon> Home
 
-      </mat-list-item>
-      <mat-divider></mat-divider>
-      <mat-list-item><mat-icon style="color:#261d51 ;margin-right: 20px;" matBadge="99" matBadgeColor="warn">messages</mat-icon> Messages</mat-list-item>
-      <mat-divider></mat-divider>
-      <mat-list-item><mat-icon style="color:#261d51 ;margin-right: 20px;" >event</mat-icon> Events</mat-list-item>
-      <mat-divider></mat-divider>
-      <mat-list-item (click)="showFiller = !showFiller"><mat-icon style="color:#261d51 ;margin-right: 20px;">explore</mat-icon> Suggestions
-      </mat-list-item>
-      <mat-divider></mat-divider>
-      <mat-list-item *ngIf="showFiller">
-          <br><p ><mat-icon style="color:#261d51 ;margin-right: 20px; margin-left: 60px;">perm_identity</mat-icon></p>
-      Prof</mat-list-item>
-      <mat-list-item *ngIf="showFiller">
-          <br><p ><mat-icon style="color:#261d51 ;margin-right: 20px; margin-left: 60px;">book</mat-icon></p>
-      Courses</mat-list-item>
-  </mat-list>
-  
-  
-  </mat-drawer>
-
-  <div class="example-sidenav-content">
-    <button type="button" mat-button (click)="drawer.toggle()">
-      Toggle sidenav
-    </button>
-    <div class="row ml-4 mr-4" >
-  
-  
-
-
-      <div class="col-lg-12 mt-5 ">
-      <div class=" sectionCenter">
-      
-          <div class="story">
-              <div class="cover">
-                  <div class="create">
-                      <div class="svg">
-                          <img src="../../../assets/img/svg/plusWhite.svg" alt="Create Story">
-                      </div>
-                      <h3>Post an Add</h3>
-                  </div>
-                  <div class="bg" style="background-color: lightblue;">
-                      <span></span>
-                  </div>
-              </div>
-      
-              <div class="cover">
-                  <div class="pro">
-                      <div class="globalRoundProfile" style="background-image: url(../../../assets/img/img/img1.jpg);"></div>
-                  </div>
-                  <h3>FilipCodes YT</h3>
-                  <div class="bg" style="background-image: url(../../../assets/img/angular.jpg);">
-                      <span></span>
-                  </div>
-              </div>
-      
-              <div class="cover">
-                  <div class="pro">
-                      <div class="globalRoundProfile" style="background-image: url(../../../assets/img/img2.jpg);"></div>
-                  </div>
-                  <h3>User Name</h3>
-                  <div class="bg" style="background-image: url(../../../assets/img/reactjs.jpg);">
-                      <span></span>
-                  </div>
-              </div>
-              <div class="cover">
-                  <div class="pro">
-                      <div class="globalRoundProfile" style="background-image: url(../../../assets/img/img3.jpg);"></div>
-                  </div>
-                  <h3>User Name</h3>
-                  <div class="bg" style="background-image: url(../../../assets/img/typescript.jpg);">
-                      <span></span>
-                  </div>
-              </div>
-              <div class="cover">
-                  <div class="pro">
-                      <div class="globalRoundProfile" style="background-image: url(../../../assets/img/img7.jpg);"></div>
-                  </div>
-                  <h3>User Name</h3>
-                  <div class="bg" style="background-image: url(../../../assets/img/html.png);">
-                      <span></span>
-                  </div>
-              </div>
-              <div class="cover">
-                  <div class="pro">
-                      <div class="globalRoundProfile" style="background-image: url(../../../assets/img/img5.jpg);"></div>
-                  </div>
-                  <h3>User Name</h3>
-                  <div class="bg" style="background-image: url(../../../assets/img/nodejs.jpg);">
-                      <span></span>
-                  </div>
-                  
-              </div>
-          </div>
-
-          <div class="createPost col-lg-12" style="margin-top: 70px;">
-              <div class="input">
-                  <div class="globalRoundProfile" style="background-image: url(../../../assets/img/use1.png);">
-                      <span></span>
-                  </div>
-                  <div class="post"  >
-                      <form class="d-flex" >
-                          <input class="form-control me-2" type="search" placeholder="Are you looking for a prof ?" aria-label="Search" style="
-                          border-top-left-radius: 20px; border-bottom-left-radius: 20px; color: black;">
-                           <button type="submit" class="btn btn-info btn-fill pull-right " style=" color:#fff; font-weight: bold; padding-left: 10px;
-                           padding-right: 10px; background-color: #261d51;  border-top-right-radius: 20px;
-                           border-bottom-right-radius: 20px;" ><i class="bi bi-search"></i></button>
-                        </form>
-                  </div>
-              </div>
-      <div style="padding-top: 50px;">
-          <hr>
-      </div>
-           
-      </div>       
-   
-
-
-
-
-     
-  </div>
-  
-  </div>
-
-
-
-  
-  <div class="card " style=" align-items: center;
-  align-self: center; display: flex; background-color:aliceblue ; border: none; padding-top: 70px; margin:auto;">
- <h1 class="text-center" >Recommended  Course</h1>
- <div class="row mt-5" >
-    <div class="col-lg-4 mb-5" *ngFor="let c of courses">
-      
-<div class="card card-one">
-<div class="multi-button">
-  <button class="fas fa-heart"></button>
-  <button class="fas fa-star"></button>
-</div>
-<header>
-  <div class="avatar">
-    <img srcset="data:image/png;base64,{{c.picture}}"  alt="Jhon Doe" />
-  </div>
-</header>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-<h3>{{c.formerName}}</h3>
-<div class="desc " style="font-weight:bold; font-size: large; opacity:90%;">
-  <i class="fa fa-book"></i>
-  {{c.courseName}}</div>
-  <div class="contacts" style="display: block;">
-    <a href=""><i class="fa fa-location-arrow" style ="font-size: 24px;" ></i><span style="margin-left:10px;">{{c.city}}</span></a>
-    <a href=""><i class="fa fa-phone" style ="font-size: 22px;"></i><span style="margin-left:10px;" >{{c.phoneNumber}}</span></a>
-    <a href=""><i class="fa fa-envelope"></i><span style="margin-left:10px;">{{c.formerEmail}}</span></a>
-    <a href=""><i class="fa fa-money"></i><span style="margin-left:10px;">{{c.price}}  <strong>DT</strong></span></a>
-    <div class="clear"></div>
-  </div>
-
-<footer>
-  <a href=""><i class="fab fa-facebook"></i></a>
-  <a href=""><i class="fab fa-linkedin"></i></a>
-  <a href=""><i class="fab fa-twitter"></i></a>
-  <a href=""><i class="fab fa-instagram"></i></a>
-</footer>
-</div>
-</div>
-</div>
-
- 
- <hr>
- </div>
- <div class="card " style=" align-items: center;
- align-self: center; display: flex; background-color:aliceblue ; border: none;  margin:auto;">
-
-<ngb-carousel *ngIf="images" [showNavigationArrows]="showNavigationArrows" 
-[showNavigationIndicators]="showNavigationIndicators"  >
-
-  <ng-template ngbSlide *ngFor="let slide of course" style="padding: auto;">
-    
-    <div class="container" style="align-items: center; align-self: center;">
-      
-  
-      <div class="row mt-5 m-auto" >
-          <div class="col-lg-3 mb-5 " *ngFor="let cs of slide">
-              <div class="box shadow-sm mr-4 ml-4" style="background-color: #fff;">
-                  <img srcset="{{cs.image}}" width="100%">
-                  <h4 class="mt-2">{{cs.name}}</h4>
-                  <p clas="mt-2">{{cs.description}}</p>
-                  <button class="btn btn-dark btn-sm mt-2" routerLink="{{cs.linkpage}}">Enroll now</button>
-              </div>
-  
-          </div>
-      </div>
-  
-  </div>
-  </ng-template>
-  
-</ngb-carousel>
-
-
-<hr>
-</div>
-<div class="card text-center shadow-sm" style="border-radius: 20px;padding-bottom: 20px; background-color: #fff; margin: auto;">
-  <div  style="padding-top: 20px;  align-items: center; align-self: center; display: flex;">
-    <h1  style=" font-style: italic; font-weight: bold; font-family: Arial, Helvetica, sans-serif;
-    text-decoration: underline;">Find a prof in the place where you<span class="highlight" style="color: #261d51;  font-style: italic;"> LIVE</span> </h1></div>
-  
-
-  <div class="row" >
-    <div class="col-lg-3" *ngFor="let cell of tableData2.gouvernorat">
-      <h2>{{cell}} </h2>
-        <div *ngFor="let row of tableData1.courses">
-          
-        <a *ngFor="let cours of row " >{{cours}}<br></a>
-      </div>
-
-    </div>
-    </div>
-
-
-
-
-</div>
-
-
-
-
-  </div>
-  </div>
-
-</mat-drawer-container>
--->
 <nav class="menu" tabindex="0" style="padding-top: 60px;">
 	<div class="smartphone-menu-trigger"></div>
   <header class="avatar">
-		<img  src="../../../assets/img/user4.jpg" />
+    <img src="https://img.icons8.com/bubbles/100/000000/user.png" class="img-radius" alt="User-Profile-Image">
     <h2>{{studentAuthService.loggedUser}}</h2>
   </header>
+ 
 	<ul>
-    <li tabindex="0" class="icon-messages"><span style="font-size: medium; color: #261d51; font-weight: bold;margin-left: 15%;">Messages</span></li>
-   <hr>
-    <li tabindex="0" class="icon-calendar"><span style="font-size: medium; color: #261d51; font-weight:bold;margin-left: 15%;">Events</span></li>
+    <li tabindex="0" class="icon-messages"><span style="font-size: medium; color: #261d51; font-weight: bold;padding-left: 10px;" routerLink="studentprofile">Profile</span></li>
+    <li tabindex="0" class="icon-favorite"><span style="font-size: medium; color: #261d51;font-weight:bold;padding-left: 10px;" routerLink="favoriteStudent">Favorites</span></li>
+    <li tabindex="0" class="icon-suggestions"><span style="font-size: medium; color: #261d51;font-weight:bold;margin-left: 15%;">Trainings </span></li>
     <hr>
-    <li tabindex="0" class="icon-suggestions"><span style="font-size: medium; color: #261d51;font-weight:bold;margin-left: 15%;">Suggestions</span></li>
-    <hr>
-    <li tabindex="0" class="icon-prof" style="margin-left: 15%;"><span style="font-size: medium; color: #261d51;font-weight:bold;margin-left: 15%;">Prof</span></li>
-    <li tabindex="0" class="icon-courses" style="margin-left: 15%;"><span style="font-size: medium; color: #261d51;font-weight:bold;margin-left: 15%;">Courses</span></li>
+    <li tabindex="0" class="icon-calendar" style="margin-left: 15%;"><span style="font-size: medium; color: #261d51;font-weight:bold;margin-left: 15%;" routerLink="formerCourses">Formers</span></li>
+    <li tabindex="0" class="icon-prof" style="margin-left: 15%;"><span style="font-size: medium; color: #261d51;font-weight:bold;margin-left: 15%;" routerLink="centertrainings">Centers</span></li>
   
   </ul>
 
@@ -296,61 +48,26 @@
                         <span></span>
                     </div>
                 </div>
-          <!----
-                <div class="cover" style="align-items: center;align-self: center;display: flex;">
-                    <div class="pro">
-                        <div class="globalRoundProfile" style="background-image: url(../../../assets/img/img2.jpg);"></div>
-                    </div>
-                    <h2 class="text-center">User Name</h2>
-                    <h3><i class="fa fa-book" style="color: #261d51;"> </i>&nbsp;course name</h3>
-                    <div class="bg" style="background-color: rgba(255, 255, 255, 0.2);">
-                        <span></span>
-                    </div>
-                </div>
-                <div class="cover" style="align-items: center;align-self: center;display: flex;">
-                    <div class="pro">
-                        <div class="globalRoundProfile" style="background-image: url(../../../assets/img/img3.jpg);"></div>
-                    </div>
-                    <h2 class="text-center">User Name</h2>
-                    <h3><i class="fa fa-book" style="color: #261d51;"> </i>&nbsp;course name</h3>
-                    <div class="bg" style="background-color: rgba(255, 255, 255, 0.2);">
-                        <span></span>
-                    </div>
-                </div>
-                <div class="cover" style="align-items: center;align-self: center;display: flex;">
-                    <div class="pro">
-                        <div class="globalRoundProfile" style="background-image: url(../../../assets/img/img5.jpg);"></div>
-                    </div>
-                    <h2 class="text-center">User Name</h2>
-                    <h3><i class="fa fa-book" style="color: #261d51;"> </i>&nbsp;course name</h3>
-                    <div class="bg" style="background-color: rgba(255, 255, 255, 0.2);">
-                        <span></span>
-                    </div>
-                </div>
-                <div class="cover" style="align-items: center;align-self: center;display: flex;">
-                    <div class="pro">
-                        <div class="globalRoundProfile" style="background-image: url(../../../assets/img/img6.jpg);"></div>
-                    </div>
-                    <h2 class="text-center">User Name</h2>
-                    <h3><i class="fa fa-book" style="color: #261d51;"> </i>&nbsp;course name</h3>
-                    <div class="bg" style="background-color: rgba(255, 255, 255, 0.2);">
-                        <span></span>
-                    </div>
-                </div>--->
+         
               </div>
           <!--barre de recherche-->
-              <div class="createPost col-lg-12" style="margin-top: 150px;">
+              <div class="createPost col-lg-12" style="margin-top: 80px;">
                   <div class="input">
-                      <div class="globalRoundProfile" style="background-image: url(../../../assets/img/user4.jpg);">
-                          <span></span>
-                      </div>
+
+                     
                       <div class="post"  >
                           <form class="d-flex" >
-                              <input class="form-control me-2" type="search" placeholder="Are you looking for a prof ?" aria-label="Search" style="
-                              border-top-left-radius: 20px; border-bottom-left-radius: 20px; color: black;">
-                               <button type="submit" class="btn btn-light pull-right " style=" color:#fff; font-weight: bold; padding-left: 10px;
-                               padding-right: 10px;   border-top-right-radius: 20px;
-                               border-bottom-right-radius: 20px; background-color: #261d51;" ><i class="bi bi-search"></i></button>
+                         <!----<form>
+                              <input type="search" (ngModelChange)="searchValues(key.value)" #key="ngModel" ngModel 
+                              name="key" id="searchName" class="form-control mr-sm-2" placeholder="search former..." required >
+                            </form>-->
+                 
+                              <input class="form-control me-2" placeholder="Are you looking for a prof ?" aria-label="Search" style="
+                              border-top-left-radius: 20px; border-bottom-left-radius: 20px; color: black;" type="search" (ngModelChange)="searchValues(key.value)" #key="ngModel" ngModel 
+                              name="key" id="searchName" class="form-control mr-sm-2">
+                               <span type="submit" class="btn btn-light pull-right " style=" color:#fff; font-weight: bold; padding-left: 10px;
+                               padding-right: 10px;   border-top-right-radius: 20px; padding-top: 5px;
+                               border-bottom-right-radius: 20px; background-color: #261d51;" ><i class="bi bi-search"></i></span>
                             </form>
                       </div>
                   </div>
@@ -370,7 +87,7 @@
 
 
       <div class="container shadow-lg" style="padding-top: 10px;background-color: #fff;">
-        <h1 class="text-center"><strong>All Courses in your city and among your favourites categories</strong></h1>
+        <h1 class="text-center"><strong>All Trainings in your city and among your favourites categories</strong></h1>
           
           <div class="row mt-5" >
               <div class="col-lg-4 mb-5" *ngFor="let c of courses">

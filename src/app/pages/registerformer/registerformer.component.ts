@@ -60,6 +60,8 @@ export class RegisterformerComponent implements OnInit {
     let domain  : string = myForm.value.userDomain;
     let experience  : string = myForm.value.userExperience;
     let description : string = myForm.value.userDescription;
+    let skills : string = myForm.value.skills;
+    let interests : string = myForm.value.interests;
 
 
 
@@ -117,12 +119,20 @@ export class RegisterformerComponent implements OnInit {
       this.invalidLogin =true;
     }
     else if(domain==null || domain=="") {
-      this.errorMessage ="Please enter your domain";
+      this.errorMessage ="Please enter your job";
       this.invalidLogin =true;
     }
     else if(description==null || description=="") {
       this.errorMessage ="Please enter your description";
       this.invalidLogin =true;
+    }
+    else if (skills==null || skills==""){
+      this._errorMessage ="Please enter your skills";
+      this._invalidLogin =true;
+    }
+    else if (interests==null || interests==""){
+      this._errorMessage ="Please enter your interests";
+      this._invalidLogin =true;
     }
     else if (!this.terms){
       this._errorMessage ="Please read the Terms and Conditions";

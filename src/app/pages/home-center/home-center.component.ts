@@ -1,3 +1,4 @@
+import { CenterService } from 'src/app/pages/services/center/center.service';
 import { CentercoursesService } from './../services/centerCourses/centercourses.service';
 import { Component, OnInit ,ViewChild, OnDestroy, SimpleChanges } from '@angular/core';
 
@@ -11,6 +12,8 @@ import { AnnoucementService } from '../services/announcement/annoucement.service
   styleUrls: ['./home-center.component.css']
 })
 export class HomeCenterComponent implements OnInit {
+  
+  public isCollapsed = false;
   courseForm:any;
   file!: File;
   announcementForm:any;
@@ -19,9 +22,14 @@ export class HomeCenterComponent implements OnInit {
   Email!:String;
   courses!:any;
   formers!:any;
-  constructor(public centerAuthService:CenterAuthService,private fb:FormBuilder ,public announcementService:AnnoucementService ,public centercoursesService:CentercoursesService) {
+  user:any;
+  constructor(public centerAuthService:CenterAuthService,private centerService:CenterService,private fb:FormBuilder ,public announcementService:AnnoucementService ,public centercoursesService:CentercoursesService) {
     this.centercoursesService.getAllCenterCourses().subscribe((data: any)=>this.courses=data);
-
+    let loggedEmail: string;
+    loggedEmail=localStorage.getItem('loggedEmail')!;
+    
+    this.centerService.getUsersByEmail(loggedEmail).subscribe((data: any)=>this.user=data);
+  
     this.courseForm=this.fb.group({
       price:[''],
       courseName:[''],
